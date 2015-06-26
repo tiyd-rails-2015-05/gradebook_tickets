@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'api/v1/students' => 'students#index'
   get 'api/v1/students/:id' => 'students#show'
   get 'api/v1/assignments' => 'assignments#index'
-  get 'api/v1/assignments' => 'assignments#show'
+  get 'api/v1/assignments/:id' => 'assignments#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
