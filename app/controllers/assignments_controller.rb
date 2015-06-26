@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :teacher_logged_in?
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy, :update_grades]
+  before_action :set_assignment, only: [:edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
@@ -28,7 +28,7 @@ class AssignmentsController < ApplicationController
       if @assignment.save
         @assignment.assign
         format.html { redirect_to assignments_path, notice: 'Assignment was successfully created.' }
-        format.json { render :show, status: :created, location: @assignment }
+        format.json { render :edit, status: :created, location: @assignment }
       else
         format.html { render :new }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
@@ -38,9 +38,9 @@ class AssignmentsController < ApplicationController
 
   def update
     if @assignment.update(assignment_params)
-      render 'assignments/update'
+      render :update
     else
-      render :show
+      render :edit
     end
   end
 
