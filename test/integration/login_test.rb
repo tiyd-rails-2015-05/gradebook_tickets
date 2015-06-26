@@ -17,7 +17,7 @@ class LoginTest < ActionDispatch::IntegrationTest
 
     get new_assignment_path
     assert_response :success
-    post assignments_path assignment: {name: "name", due: "2015-06-04"}
+    post assignments_path assignment: {name: "name", due: "2015-06-04", teacher_id: teachers(:one).id}
     assert_redirected_to assignments_path
 
     follow_redirect!
@@ -41,7 +41,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#{sessions_logout_path}']", 1
     get sessions_logout_path
     assert_redirected_to sessions_login_path
-    
+
     follow_redirect!
     assert_select "input[type=password]", 1
   end

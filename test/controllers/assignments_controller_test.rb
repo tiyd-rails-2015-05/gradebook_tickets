@@ -26,7 +26,7 @@ class AssignmentsControllerTest < ActionController::TestCase
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      post :create, assignment: { due: "2015-06-04", name: "name", teacher_id: 1 }
+      post :create, assignment: { due: "2015-06-04", name: "name", teacher_id: @teacher.id }
     end
 
     assert_redirected_to assignments_path
