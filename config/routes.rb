@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'sessions/logout'
 
   resources :assignments
-  resources :grades
   resources :parents
   resources :students
   resources :teachers
