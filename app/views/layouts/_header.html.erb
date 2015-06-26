@@ -6,7 +6,7 @@
     <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul class="navigation-menu show" id="js-navigation-menu">
-        <li class="nav-link">
+        <!-- <li class="nav-link">
           <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
         </li>
         <li class="nav-link">
@@ -17,7 +17,7 @@
         </li>
         <li class="nav-link">
           <%= link_to "Generate API Key", new_api_key_path, class: "navbar" %>
-        </li>
+        </li> -->
 
         <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Students</a>
           <ul class="submenu">
@@ -33,6 +33,23 @@
         <li class="nav-link">
           <%= link_to "Logout", sessions_logout_path, class: "navbar" %>
         </li>
+
+        <ul id="flex-out">
+          <span class='slideout'>
+            <li class="menu-item pure-menu-item">
+              <%= link_to "My Surveys", root_path, class: "navbar"  %>
+            </li>
+            <li class="menu-item pure-menu-item">
+              <%= link_to "Logout", root_path, class: "navbar"  %>
+            </li>
+          </span>
+          <li class="menu-item-special">
+            <% name = @user.name.capitalize rescue nil %>
+            <% @user ||= "#" %>
+            <%= link_to "Name", root_path, class: "navbar"  %>
+          </li>
+        </ul>
+
     </nav>
   </div>
 </header>
