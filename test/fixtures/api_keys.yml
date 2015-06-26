@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  token: MyString
+  token: token1
   expires_at: 2015-06-26
 
 two:

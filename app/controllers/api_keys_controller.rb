@@ -1,4 +1,6 @@
 class ApiKeysController < ApplicationController
+  before_action :teacher_logged_in?, except: :show
+
   def new
     @apikey = ApiKey.new
   end
