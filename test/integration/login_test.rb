@@ -10,7 +10,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert response.body.match("Welcome")
     assert_select "img", 1
-    assert_select "button", 5
+    assert_select "button", 6
 
     get assignments_path
     assert_response :success
@@ -41,7 +41,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#{sessions_logout_path}']", 1
     get sessions_logout_path
     assert_redirected_to sessions_login_path
-    
+
     follow_redirect!
     assert_select "input[type=password]", 1
   end
