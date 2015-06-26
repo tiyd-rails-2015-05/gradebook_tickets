@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :teacher_logged_in?
-  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+  before_action :set_assignment, only: [:edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
@@ -8,19 +8,15 @@ class AssignmentsController < ApplicationController
     @assignments = Assignment.all
   end
 
-  # GET /assignments/1
-  # GET /assignments/1.json
-  def show
-    @grades = Grade.all
-  end
-
   # GET /assignments/new
   def new
-    @assignment = Assignment.new
+    @assignment = Assignment.new(teacher_id: session[:user_id])
   end
 
   # GET /assignments/1/edit
   def edit
+    @teacher = Teacher.find_by_id(session[:user_id])
+    @grades = Grade.where(assignment_id: @assignment.id)
   end
 
   # POST /assignments
@@ -30,8 +26,9 @@ class AssignmentsController < ApplicationController
 
     respond_to do |format|
       if @assignment.save
+        @assignment.assign
         format.html { redirect_to assignments_path, notice: 'Assignment was successfully created.' }
-        format.json { render :show, status: :created, location: @assignment }
+        format.json { render :edit, status: :created, location: @assignment }
       else
         format.html { render :new }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
@@ -39,22 +36,14 @@ class AssignmentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /assignments/1
-  # PATCH/PUT /assignments/1.json
   def update
-    respond_to do |format|
-      if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @assignment }
-      else
-        format.html { render :edit }
-        format.json { render json: @assignment.errors, status: :unprocessable_entity }
-      end
+    if @assignment.update(assignment_params)
+      render :update
+    else
+      render :edit
     end
   end
 
-  # DELETE /assignments/1
-  # DELETE /assignments/1.json
   def destroy
     @assignment.destroy
     respond_to do |format|
@@ -71,6 +60,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:name, :due)
+      params.require(:assignment).permit(:teacher_id, :name, :due, grades_attributes: [:id, :score, :student_id])
     end
 end

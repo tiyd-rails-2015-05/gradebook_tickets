@@ -1,15 +1,13 @@
 <div class="app-form">
 
 
-  <p>
-    <strong>Name:</strong>
-    <%= @student.name %>
-  </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= @student.email %>
-  </p>
+<p>
+  <strong>Grades:</strong>
+  <% @student.grades.each do |g| %>
+    <%= g.score %> <%= link_to "Pdf", "#{g.upload_pdf}" %>
+  <% end %>
+</p>
 
   <p>
     <strong>Grades:</strong>
