@@ -34,6 +34,7 @@ class SessionsController < ApplicationController
 
   def logout
     session[:user_id]= nil
+    session[:user_type]=nil
     redirect_to sessions_login_path, notice: "Logout Successful"
   end
 
