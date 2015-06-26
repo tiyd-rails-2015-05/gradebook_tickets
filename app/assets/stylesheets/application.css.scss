@@ -13,391 +13,332 @@
 
 *= require font-awesome
  */
-
 @import "bourbon";
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
 @import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Covered+By+Your+Grace|Rock+Salt); //We only use Rock+Salt, maybe we shoudl delete the other two fonts
-
-
 //nav options, findnav, findfoot, find hero
-
-  @include reset-all;
- body{
-   margin: 0px;
-//   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
- // background-color: rgb(143, 159, 152);
- }
-
- .app-form{
-   @include border-style(solid);
-   @include padding(20px 20px 20px 20px);
-   @include position(relative, 5px 5em 10px 5em);
-   @include margin(100px 375px ); width:25%;
-   background-color: rgb(62, 166, 121);
- }
-
-
- // Navigation Header-----------findnav-----------------------------------------
- header.navigation {
-   ///////////////////////////////////////////////////////////////////////////////////
-   $base-border-color: gainsboro !default;
-   $base-border-radius: 3px !default;
-   $base-accent-color: #477DCA !default;
-   $dark-gray: #333 !default;
-   $large-screen: em(860) !default;
-
-   a {
-     text-decoration: none;
-     color:white
-   }
-   //////////////////////////////////////////////////////////////////////////////////
-
-   $navigation-padding: 1em;
-   $navigation-background: rgb(3, 132, 77);
-   $navigation-color: transparentize(white, 0.3);
-   $navigation-color-hover: white;
-   $navigation-height: 60px;
-   $navigation-nav-button-background: $base-accent-color;
-   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
-   $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
-   $navigation-search-background: lighten($navigation-background, 5);
-   $navigation-search-border: 1px solid darken($navigation-background, 5);
-   $navigation-active-link-color: transparentize(white, 0.5);
-   $navigation-submenu-padding: 1em;
-   $navigation-submenu-width: 12em;
-   $horizontal-bar-mode: $large-screen;
-
-   background-color: $navigation-background;
-   border-bottom: 1px solid darken($navigation-background, 10);
-   min-height: $navigation-height;
-   width: 100%;
-   z-index: 999;
-
-   .navigation-wrapper {
-     @include clearfix;
-     @include outer-container;
-     position: relative;
-     z-index: 9999;
-   }
-
-   .logo {
-     float: left;
-     max-height: $navigation-height;
-     padding-left: $navigation-padding;
-     padding-right: 2em;
-
-     img {
-       max-height: $navigation-height;
-       padding: 0.8em 0;
-     }
-   }
-
-   // Mobile view
-
-   .navigation-menu-button {
-     color: $navigation-color;
-     display: block;
-     float: right;
-     font-weight: 700;
-     line-height: $navigation-height;
-     margin: 0;
-     padding-right: 1em;
-     text-transform: uppercase;
-
-     @include media ($horizontal-bar-mode) {
-       display: none;
-     }
-
-     &:focus,
-     &:hover {
-       color: $navigation-color-hover;
-     }
-   }
-
-   // Nav menu
-
-   nav {
-     float: none;
-     min-height: $navigation-height;
-     z-index: 9999999;
-
-     @include media ($horizontal-bar-mode) {
-       float: left;
-     }
-   }
-
-   ul.navigation-menu {
-     -webkit-transform-style: preserve-3d; // stop webkit flicker
-     clear: both;
-     display: none;
-     margin: 0 auto;
-     overflow: visible;
-     padding: 0;
-     width: 100%;
-     z-index: 9999;
-
-     &.show {
-       display: block;
-     }
-
-     @include media ($horizontal-bar-mode) {
-       display: inline;
-       margin: 0;
-       padding: 0;
-     }
-   }
-
-   // The nav items
-
-   ul li.nav-link {
-     background: $navigation-background;
-     display: block;
-     line-height: $navigation-height;
-     overflow: hidden;
-     padding-right: 0.8em;
-     text-align: right;
-     width: 100%;
-     z-index: 9999;
-
-     @include media ($horizontal-bar-mode) {
-       background: transparent;
-       display: inline;
-       line-height: $navigation-height;
-       text-decoration: none;
-       width: auto;
-     }
-
-     a {
-       color: $navigation-color;
-       display: inline-block;
-       font-weight: 400;
-
-       @include media ($horizontal-bar-mode) {
-         padding-right: 1em;
-       }
-
-       &:focus,
-       &:hover {
-         color: $navigation-color-hover;
-       }
-     }
-   }
-
-   .active-nav-item a {
-     border-bottom: 1px solid $navigation-active-link-color;
-     padding-bottom: 3px;
-   }
-
-   // Sub menus
-
-   li.more.nav-link {
-     padding-right: 0;
-
-     @include media($large-screen) {
-       padding-right: $navigation-submenu-padding;
-     }
-
-     > ul > li:first-child a  {
-       padding-top: 1em;
-     }
-
-     a {
-       margin-right: $navigation-submenu-padding;
-     }
-
-     > a {
-       padding-right: 0.6em;
-     }
-
-     > a:after {
-       @include position(absolute, auto -0.4em auto auto);
-       content: '\25BE';
-       color: $navigation-color;
-     }
-   }
-
-   li.more {
-     overflow: visible;
-     padding-right: 0;
-
-     a {
-       padding-right: 0.8em;
-     }
-
-     > a {
-       padding-right: 1.6em;
-       position: relative;
-
-       @include media($large-screen) {
-         margin-right: $navigation-submenu-padding;
-       }
-
-       &:after {
-         content: '›';
-         font-size: 1.2em;
-         position: absolute;
-         right: $navigation-submenu-padding / 2;
-       }
-     }
-
-     &:focus > .submenu,
-     &:hover > .submenu {
-       display: block;
-     }
-
-     @include media($horizontal-bar-mode) {
-       padding-right: 0.8em;
-       position: relative;
-     }
-   }
-
-   ul.submenu {
-     display: none;
-     padding-left: 0;
-
-     @include media($horizontal-bar-mode) {
-       left: -$navigation-submenu-padding;
-       position: absolute;
-       top: 1.5em;
-     }
-
-     .submenu {
-       @include media($horizontal-bar-mode) {
-         left: $navigation-submenu-width - 0.2em;
-         top: 0;
-       }
-     }
-
-     li {
-       display: block;
-       padding-right: 0;
-
-       @include media($horizontal-bar-mode) {
-         line-height: $navigation-height / 1.3;
-
-         &:first-child > a {
-           border-top-left-radius: $base-border-radius;
-           border-top-right-radius: $base-border-radius;
-         }
-
-         &:last-child > a {
-           border-bottom-left-radius: $base-border-radius;
-           border-bottom-right-radius: $base-border-radius;
-           padding-bottom: 0.7em;
-         }
-       }
-
-       a {
-         background-color: darken($navigation-background, 3%);
-         display: inline-block;
-         text-align: right;
-         width: 100%;
-
-         @include media($horizontal-bar-mode) {
-           background-color: $navigation-background;
-           padding-left: $navigation-submenu-padding;
-           text-align: left;
-           width: $navigation-submenu-width;
-         }
-       }
-     }
-   }
-
-   // Elements on the far right
-
-   .navigation-tools {
-     background: #505050;
-     clear: both;
-     display: block;
-     height: $navigation-height;
-     padding-left: $navigation-padding / 2;
-     padding-right: $navigation-padding;
-
-     @include media($large-screen) {
-       background: transparent;
-       clear: none;
-       float: right;
-     }
-   }
-
-   .sign-up {
-     @include button(flat, $base-accent-color);
-     display: inline;
-     float: right;
-     font-size: 0.8em;
-     margin-top: 1em;
-     padding: 0.75em 1em;
-     text-transform: uppercase;
-   }
-
-   // Search bar
-
-   .search-bar {
-     $search-bar-border-color: $base-border-color;
-     $search-bar-border: 1px solid $search-bar-border-color;
-     $search-bar-background: lighten($search-bar-border-color, 10%);
-
-     float: left;
-     padding: 0.85em 0.6em 0.7em 0.6em;
-     width: 60%;
-
-     form {
-       position: relative;
-
-       input[type=search] {
-         @include box-sizing(border-box);
-         background: $navigation-search-background;
-         border-radius: $base-border-radius * 2;
-         border: $navigation-search-border;
-         color: $navigation-color;
-         font-size: 0.9em;
-         font-style: italic;
-         margin: 0;
-         padding: 0.5em 0.8em;
-         width: 100%;
-
-         @include media($large-screen) {
-           width: 100%;
-         }
-       }
-
-       button[type=submit] {
-         @include button(flat, $navigation-search-background);
-         bottom: 0.3em;
-         left: auto;
-         outline: none;
-         padding: 0 9px;
-         position: absolute;
-         right: 0.3em;
-         top: 0.3em;
-
-         img {
-           height: 12px;
-           opacity: 0.7;
-           padding: 1px;
-         }
-       }
-     }
-
-     @include media($horizontal-bar-mode) {
-       display: inline-block;
-       position: relative;
-       width: 16em;
-
-       input {
-         @include box-sizing(border-box);
-         display: block;
-       }
-     }
-   }
- }
-
-
- ///findfoot
-
- //Uncomment this for a sticky footer.
+body {
+  margin: 0;
+
+  //   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
+  // background-color: rgb(143, 159, 152);
+}
+.app-form {
+  @include border-style(solid);
+  @include padding(20px 20px 20px 20px);
+  @include position(relative, 5px 5em 10px 5em);
+  @include margin(100px 375px );
+  width: 25%;
+  background-color: rgb(62, 166, 121);
+}
+
+// Navigation Header-----------findnav-----------------------------------------
+header.navigation {
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-accent-color: #477dca !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////
+  $navigation-padding: 1em;
+  $navigation-background: rgb(3, 132, 77);
+  $navigation-color: transparentize(white, 0.3);
+  $navigation-color-hover: white;
+  $navigation-height: 60px;
+  $navigation-nav-button-background: $base-accent-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-search-background: lighten($navigation-background, 5);
+  $navigation-search-border: 1px solid darken($navigation-background, 5);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $large-screen;
+  background-color: $navigation-background;
+  border-bottom: 1px solid darken($navigation-background, 10);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2em;
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
+    }
+  }
+
+  // Mobile view
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    font-weight: 700;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    text-transform: uppercase;
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
+  }
+  ul.navigation-menu {
+    -webkit-transform-style: preserve-3d; // stop webkit flicker
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+    &.show {
+      display: block;
+    }
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      font-weight: 400;
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+  .active-nav-item a {
+    border-bottom: 1px solid $navigation-active-link-color;
+    padding-bottom: 3px;
+  }
+
+  // Sub menus
+  li.more.nav-link {
+    padding-right: 0;
+    @include media($large-screen) {
+      padding-right: $navigation-submenu-padding;
+    }
+    > ul > li:first-child a {
+      padding-top: 1em;
+    }
+    a {
+      margin-right: $navigation-submenu-padding;
+    }
+    > a {
+      padding-right: 0.6em;
+    }
+    > a:after {
+      @include position(absolute, auto -0.4em auto auto);
+      content: '\25BE';
+      color: $navigation-color;
+    }
+  }
+  li.more {
+    overflow: visible;
+    padding-right: 0;
+    a {
+      padding-right: 0.8em;
+    }
+    > a {
+      padding-right: 1.6em;
+      position: relative;
+      @include media($large-screen) {
+        margin-right: $navigation-submenu-padding;
+      }
+      &:after {
+        content: '›';
+        font-size: 1.2em;
+        position: absolute;
+        right: $navigation-submenu-padding / 2;
+      }
+    }
+    &:focus > .submenu,
+    &:hover > .submenu {
+      display: block;
+    }
+    @include media($horizontal-bar-mode) {
+      padding-right: 0.8em;
+      position: relative;
+    }
+  }
+  ul.submenu {
+    display: none;
+    padding-left: 0;
+    @include media($horizontal-bar-mode) {
+      left: -$navigation-submenu-padding;
+      position: absolute;
+      top: 1.5em;
+    }
+    .submenu {
+      @include media($horizontal-bar-mode) {
+        left: $navigation-submenu-width - 0.2em;
+        top: 0;
+      }
+    }
+    li {
+      display: block;
+      padding-right: 0;
+      @include media($horizontal-bar-mode) {
+        line-height: $navigation-height / 1.3;
+        &:first-child > a {
+          border-top-left-radius: $base-border-radius;
+          border-top-right-radius: $base-border-radius;
+        }
+        &:last-child > a {
+          border-bottom-left-radius: $base-border-radius;
+          border-bottom-right-radius: $base-border-radius;
+          padding-bottom: 0.7em;
+        }
+      }
+      a {
+        background-color: darken($navigation-background, 3%);
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+        @include media($horizontal-bar-mode) {
+          background-color: $navigation-background;
+          padding-left: $navigation-submenu-padding;
+          text-align: left;
+          width: $navigation-submenu-width;
+        }
+      }
+    }
+  }
+
+  // Elements on the far right
+  .navigation-tools {
+    background: #505050;
+    clear: both;
+    display: block;
+    height: $navigation-height;
+    padding-left: $navigation-padding / 2;
+    padding-right: $navigation-padding;
+    @include media($large-screen) {
+      background: transparent;
+      clear: none;
+      float: right;
+    }
+  }
+  .sign-up {
+    @include button(flat, $base-accent-color);
+    display: inline;
+    float: right;
+    font-size: 0.8em;
+    margin-top: 1em;
+    padding: 0.75em 1em;
+    text-transform: uppercase;
+  }
+
+  // Search bar
+  .search-bar {
+    $search-bar-border-color: $base-border-color;
+    $search-bar-border: 1px solid $search-bar-border-color;
+    $search-bar-background: lighten($search-bar-border-color, 10%);
+    float: left;
+    padding: 0.85em 0.6em 0.7em;
+    width: 60%;
+    form {
+      position: relative;
+      input[type=search] {
+        @include box-sizing(border-box);
+        background: $navigation-search-background;
+        border-radius: $base-border-radius * 2;
+        border: $navigation-search-border;
+        color: $navigation-color;
+        font-size: 0.9em;
+        font-style: italic;
+        margin: 0;
+        padding: 0.5em 0.8em;
+        width: 100%;
+        @include media($large-screen) {
+          width: 100%;
+        }
+      }
+      button[type=submit] {
+        @include button(flat, $navigation-search-background);
+        bottom: 0.3em;
+        left: auto;
+        outline: none;
+        padding: 0 9px;
+        position: absolute;
+        right: 0.3em;
+        top: 0.3em;
+        img {
+          height: 12px;
+          opacity: 0.7;
+          padding: 1px;
+        }
+      }
+    }
+    @include media($horizontal-bar-mode) {
+      display: inline-block;
+      position: relative;
+      width: 16em;
+      input {
+        @include box-sizing(border-box);
+        display: block;
+      }
+    }
+  }
+}
+
+///findfoot
+//Uncomment this for a sticky footer.
 //
 //  .wrapper-for-content-outside-of-footer {
 //    min-height: 100%;
@@ -424,10 +365,10 @@
 .footer-2 {
 
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-spacing: .5em 2em .25em;
+  $base-spacing: 0.5em 2em 0.25em;
   $base-accent-color: #477dca !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
+  $medium-screen: em(640);
+  $large-screen: em(860);
   ul {
     margin: 0;
     padding: 0;
@@ -449,8 +390,8 @@
   padding: $base-spacing;
   width: 100%;
   display: inline-block;
-  position:fixed;
-  bottom:0;
+  position: fixed;
+  bottom: 0;
   .footer-logo {
     margin-right: 1em;
     margin-bottom: 1em;
@@ -580,28 +521,26 @@
 }
 
 //findtable
-
 .tables {
+
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: rgb(3, 132, 77);
   $base-border-radius: 3px !default;
   $base-line-height: 1.5em !default;
   $base-spacing: 1.5em !default;
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #477dca !default;
   $base-link-color: $base-accent-color !default;
   $dark-gray: #333 !default;
-  $light-gray: #DDD !default;
+  $light-gray: #ddd !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
-
   width: 100%;
-
   th {
     text-align: left;
   }
-  //////////////////////////////////////////////////////////////////////////////////
 
+  //////////////////////////////////////////////////////////////////////////////////
   $table-border-color: $base-border-color;
   $table-border: 1px solid $table-border-color;
   $table-background: rgb(62, 166, 121);
@@ -610,17 +549,15 @@
   $table-stripe-background: darken($table-background, 2%);
   $table-stripe-background-hover: darken($table-stripe-background, 5%);
   $table-padding: 0.75em 1em;
-
   border-collapse: separate;
-  border-left: 0px;
+  border-left: 0;
   border-radius: $base-border-radius;
   border-spacing: 0;
   border: $table-border;
-
   tbody {
     background-color: $table-background;
-
-    tr:hover > td, tr:hover > th {
+    tr:hover > td,
+    tr:hover > th {
       background-color: $table-hover-background;
     }
     tr:nth-child(even) {
@@ -630,56 +567,46 @@
       }
     }
   }
-
   thead:first-of-type {
     tr:first-child > th:first-child {
       border-top-left-radius: $base-border-radius;
     }
-
     tr:first-child > th:last-child {
       border-top-right-radius: $base-border-radius;
     }
   }
-
   tbody:last-child {
     tr:last-child > td:first-child {
       border-bottom-left-radius: $base-border-radius;
     }
-
     tr:last-child > td:last-child {
       border-bottom-right-radius: $base-border-radius;
     }
   }
-
   thead {
     th {
       background-color: $table-header-background;
-      border-bottom: 0px;
+      border-bottom: 0;
       border-left: 1px solid $table-border-color;
       padding: $table-padding;
       text-align: center;
-
       &:first-child {
         border-left: none;
       }
     }
   }
-
   tbody {
     background-color: $table-background;
-
     td {
-      border-bottom: 0px;
+      border-bottom: 0;
       border-left: 1px solid $table-border-color;
       border-top: 1px solid $table-border-color;
       padding: $table-padding;
       text-align: center;
       color: white;
-
       &:first-child {
         border-left: none;
       }
-
       button {
         @include button(flat, $base-accent-color);
         display: inline-block;
@@ -690,7 +617,6 @@
         outline: none;
         padding: 0.3em 1em;
         width: 100%;
-
         @include media($medium-screen) {
           margin-bottom: 0;
           width: auto;
@@ -701,31 +627,27 @@
 }
 
 //findimagegradient----------------------------------
-
 .image-gradient-dynamic {
   $image-gradient-color-top: red;
   $transparency-top: 0.9;
   $image-gradient-color-bottom: green;
   $transparency-bottom: 0.6;
-  $vertical-angle: 0deg;
+  $vertical-angle: 0;
   $image-gradient-color-left: teal;
   $transparency-left: 0.8;
   $image-gradient-color-right: yellow;
   $transparency-right: 0.8;
   $horizontal-angle: 90deg;
-
   line-height: 0;
   position: relative;
   width: 100%;
-
   img {
-   height: auto;
-   left: 0;
-   position: relative;
-   top: 0;
-   width: 100%;
+    height: auto;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
   }
-
   .copy {
     @include transform(translate(-50%, -50%));
     left: 50%;
@@ -734,7 +656,6 @@
     text-align: center;
     top: 50%;
     z-index: 999;
-
     p {
       color: white;
       font-weight: 800;
@@ -743,16 +664,12 @@
       position: relative;
     }
   }
-
   .overlay {
-    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top),
-      transparentize($image-gradient-color-bottom, $transparency-bottom));
+    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top), transparentize($image-gradient-color-bottom, $transparency-bottom));
     display: block;
     @include position(absolute, 0px 0px 0px 0px);
-
     &:after {
-      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left),
-        transparentize($image-gradient-color-right, $transparency-right));
+      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left), transparentize($image-gradient-color-right, $transparency-right));
       @include position(absolute, 0px 0px 0px 0px);
       content: '';
       display: block;
@@ -760,11 +677,9 @@
   }
 }
 
-
 //findmodal---------------------------------------------
-
-
 .modal {
+
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -773,49 +688,43 @@
   $base-line-height: 1.5em !default;
   $base-accent-color: rgb(201, 0, 122);
   $dark-gray: #333 !default;
-  $light-gray: #DDD !default;
+  $light-gray: #ddd !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
-
   h1 {
     margin: 0;
   }
-
   p {
     color: $base-font-color;
     line-height: $base-line-height;
   }
-  //////////////////////////////////////////////////////////////////////////////////
 
+  //////////////////////////////////////////////////////////////////////////////////
   $modal-padding: 3em;
   $modal-background: $base-background-color;
   $modal-close-color: $light-gray;
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
   $modal-trigger-image-width: 300px;
-
   label {
     cursor: pointer;
     margin-bottom: 0;
   }
-
   label img {
     border-radius: $modal-trigger-image-width / 2;
     display: block;
     max-width: $modal-trigger-image-width;
   }
-
   .modal-state {
     display: none;
   }
-
   .modal-trigger {
     @include button(flat, $base-accent-color);
     padding: 0.8em 1em;
   }
-
-  .modal-window { // overlay
+  .modal-window {
+    // overlay
     @include transition(opacity 0.25s ease);
     @include position(fixed, 0px 0px 0px 0px);
     background: rgba(0,0,0, 0.85);
@@ -824,23 +733,19 @@
     text-align: left;
     visibility: hidden;
     z-index: 99999999999;
-
     @include media($large-screen) {
       padding-top: 10em;
     }
-
     .modal-bg {
       @include position(absolute, 0px 0px 0px 0px);
       cursor: pointer;
     }
   }
-
   .modal-close {
     @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
     @include size(1.5em);
     background: $modal-background;
     cursor: pointer;
-
     &:after,
     &:before {
       @include position(absolute, 3px 3px 0 50%);
@@ -851,112 +756,86 @@
       display: block;
       margin: -3px 0 0 -1px;
     }
-
     &:hover:after,
     &:hover:before {
       background: darken($modal-close-color, 10%);
     }
-
     &:before {
       @include transform(rotate(-45deg));
     }
   }
-
   .modal-inner {
     @include transition(opacity 0.25s ease);
     background: $modal-background;
     border-radius: $base-border-radius;
     margin-top: 0;
     margin: auto;
-    max-height: 95%;
     overflow: auto;
     padding: $modal-padding / 2;
     position: relative;
     width: 95%;
-
     @include media($medium-screen) {
       max-height: 70%;
       padding: $modal-padding;
       width: 60%;
     }
-
     @include media($large-screen) {
       width: 50%;
     }
-
     h1 {
       color: $base-font-color;
       margin-bottom: 0.6em;
       text-align: left;
       text-transform: capitalize;
     }
-
     .modal-intro {
       font-weight: 800;
     }
-
     .modal-content {
       color: $base-font-color;
-
       @include media($medium-screen) {
         @include columns(2 8em);
       }
     }
-
     a.cta {
       color: white;
       display: inline-block;
       margin-right: 0.5em;
       margin-top: 1em;
-
       &:last-child {
         padding: 0 2em;
       }
     }
   }
-
   .modal-state:checked + .modal-window {
     opacity: 1;
     visibility: visible;
   }
-
   .modal-state:checked + .modal-window .modal-inner {
     top: 0.5em;
   }
 }
-
 .modal-open {
   overflow: hidden;
 }
-
 .modal-closed {
   overflow: auto;
 }
 
 // Based on code by Kasper Mikiewicz
-
-
 //findstats
-
-
 .stats {
   $base-spacing: 1.5em !default;
   $dark-gray: #333 !default;
   $base-font-color: $dark-gray !default;
   $base-accent-color: #477dca !default;
   $stats-color: lighten($base-accent-color, 10%);
-
- @include position(relative, 200px 250px);
-
-
-
+  @include position(relative, 200px 250px);
 
   //padding: $base-spacing / 3;
-
   ul {
     padding: 0;
   }
-
   li {
     border-right: 1px solid transparentize($base-font-color, 0.8);
     color: rgb(201, 0, 122);
@@ -967,17 +846,13 @@
     line-height: 1.1em;
     padding: 0 0.7em;
     text-align: center;
-
-
     &:first-child {
       padding-left: 0;
     }
-
     &:last-child {
       border-right: 0;
     }
   }
-
   span {
     color: $base-font-color;
     display: block;
@@ -986,48 +861,34 @@
   }
 }
 
-
 //findgriditems------------------------------------------------
-
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
 }
-
 .grid-items {
+  padding: 0 15px; //adds padding left and right on grid items container
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-accent-color: #477DCA !default;
+  $base-accent-color: #477dca !default;
   $base-background-color: white !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-
-
   p {
     line-height: 1.5em;
   }
-
   a {
     text-decoration: none;
   }
-  //////////////////////////////////////////////////////////////////////////////////
 
+  //////////////////////////////////////////////////////////////////////////////////
   $grid-items-background: $base-background-color;
   $grid-item-background: desaturate($base-accent-color, 30%);
-  $grid-item-colors:
-    rgb(62, 166, 121),
-    rgb(191, 71, 144),
-    rgb(219, 82, 119),
-  rgb(242, 193, 91),
-    #A7A891,
-    #BDCC97,
-    #979EA0;
+  $grid-item-colors: rgb(62, 166, 121), rgb(191, 71, 144), rgb(219, 82, 119), rgb(242, 193, 91), #A7A891, #BDCC97, #979ea0;
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
   $grid-item-color: white;
   $grid-item-height: 14em;
-
   @include clearfix;
-
   .grid-item {
     @include transition (all 0.2s ease-in-out);
     background: $grid-item-background;
@@ -1043,17 +904,15 @@
     padding: 2em;
     text-align: center;
     width: 100%;
-
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
     }
-
-    @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
+    @for $i from 1 through length($grid-item-colors) {
+      // assign colors from $grid-item-colors list
       &:nth-child(#{$i}) {
         $background-from-list: nth($grid-item-colors, $i);
         background-color: $background-from-list;
-        box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);
-
+        box-shadow: inset 0 0 1px 2px darken($background-from-list, 10%);
         &:focus,
         &:hover {
           background-color: darken($background-from-list, 10%);
@@ -1064,29 +923,24 @@
       }
     }
   }
-
   .grid-item img {
-      display: block;
-      height: 3em;
-      margin-bottom: 1em;
-      margin: auto;
-    }
-
+    display: block;
+    height: 3em;
+    margin-bottom: 1em;
+    margin: auto;
+  }
   .grid-item h1 {
-      color: $grid-item-color;
-      font-size: 1.3em;
-      margin-bottom: 0.4em;
-    }
-
+    color: $grid-item-color;
+    font-size: 1.3em;
+    margin-bottom: 0.4em;
+  }
   .grid-item p {
-      margin: auto;
-      color: transparentize($grid-item-color, 0.3);
-
-      @include media($medium-screen) {
-        max-width: 70%;
-      }
+    margin: auto;
+    color: transparentize($grid-item-color, 0.3);
+    @include media($medium-screen) {
+      max-width: 70%;
     }
-
+  }
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
@@ -1097,7 +951,6 @@
       }
     }
   }
-
   .grid-item-image {
     background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
     background-color: $grid-item-background;

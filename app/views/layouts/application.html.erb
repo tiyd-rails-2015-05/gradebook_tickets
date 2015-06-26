@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gradebook</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<% if session[:user_id] %>
-
+  <head>
+    <title>Gradebook</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <% if session[:user_id] %>
   <header class="navigation" role="banner">
     <div class="navigation-wrapper">
-      <a href="javascript:void(0)" class="logo">
+      <a class="logo" href="javascript:void(0)">
         <%= image_tag asset_url("professor-512-white.png") %>
       </a>
-      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+      <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
       <nav role="navigation">
-        <ul id="js-navigation-menu" class="navigation-menu show">
-          <li class="nav-link"> <%= link_to "New Assignment", new_assignment_path, class: "navbar" %> </li>
-          <li class="nav-link"> <%= link_to "All Assignments", assignments_path, class: "navbar" %> </li>
-          <li class="nav-link"> <%= link_to "New Student", new_student_path, class: "navbar" %> </li>
-          <li class="nav-link"> <%= link_to "View Students", students_path, class: "navbar" %> </li>
-          <li class="nav-link"> <%= link_to "View Parents", parents_path, class: "navbar" %> </li>
-            <li class="nav-link"> <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
-
+        <ul class="navigation-menu show" id="js-navigation-menu">
+          <li class="nav-link">
+            <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
+          </li>
+          <li class="nav-link">
+            <%= link_to "All Assignments", assignments_path, class: "navbar" %>
+          </li>
+          <li class="nav-link">
+            <%= link_to "New Student", new_student_path, class: "navbar" %>
+          </li>
+          <li class="nav-link">
+            <%= link_to "View Students", students_path, class: "navbar" %>
+          </li>
+          <li class="nav-link">
+            <%= link_to "View Parents", parents_path, class: "navbar" %>
+          </li>
+          <li class="nav-link">
+            <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
         </ul>
-
       </nav>
-
     </div>
   </header>
-<% end %>
-
-<body>
-
-
-  <p id="notice"><%= notice %></p>
-  <div class="container">
-    <div class="row">
-      <%= yield %>
+  <% end %>
+  <body>
+    <p id="notice"><%= notice %></p>
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      </div>
     </div>
-  </div>
-
-
-  <!-- <div class="wrapper-for-content-outside-of-footer">
+<!-- <div class="wrapper-for-content-outside-of-footer">
   </div> -->
-
-  <footer class="footer-2" role="contentinfo">
-    <div class="footer-logo">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
-    </div>
+    <footer class="footer-2" role="contentinfo">
+      <div class="footer-logo">
+        <img alt="Logo image" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png">
+      </div>
       <ul>
         <li><a href="javascript:void(0)">About</a></li>
         <li><a href="javascript:void(0)">Contact</a></li>
         <li><a href="javascript:void(0)">Products</a></li>
       </ul>
-
       <div class="footer-secondary-links">
         <ul>
           <li><a href="javascript:void(0)">Terms and Conditions</a></li>
           <li><a href="javascript:void(0)">Privacy Policy</a></li>
         </ul>
-
         <ul class="footer-social">
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
-            </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-          </a></li>
-          <li><a href="javascript:void(0)">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-          </a></li>
+          <li>
+            <a href="javascript:void(0)">
+              <img alt="Facebook" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img alt="Twitter" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img alt="YouTube" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png">
+            </a>
+          </li>
         </ul>
       </div>
-  </footer>
-
-
-
-</body>
-
-
-
+    </footer>
+  </body>
 </html>
