@@ -6,28 +6,31 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<% if session[:user_id] %>
 
-<header class="navigation" role="banner">
-  <div class="navigation-wrapper">
-    <a href="javascript:void(0)" class="logo">
-      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
-    </a>
-    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
-    <nav role="navigation">
-      <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link"> <%= link_to "New Assignment", new_assignment_path, class: "navbar" %> </li>
-        <li class="nav-link">   <%= link_to "All Assignments", assignments_path, class: "navbar" %> </li>
-        <li class="nav-link"> <%= link_to "New Student", new_student_path, class: "navbar" %> </li>
-        <li class="nav-link">   <%= link_to "View Students", students_path, class: "navbar" %> </li>
-        <li class="nav-link">   <%= link_to "View Parents", parents_path, class: "navbar" %> </li>
-        <a><%= link_to "Logout", sessions_logout_path if session[:user_id] %></a>
+  <header class="navigation" role="banner">
+    <div class="navigation-wrapper">
+      <a href="javascript:void(0)" class="logo">
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+      </a>
+      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+      <nav role="navigation">
+        <ul id="js-navigation-menu" class="navigation-menu show">
+          <li class="nav-link"> <%= link_to "New Assignment", new_assignment_path, class: "navbar" %> </li>
+          <li class="nav-link"> <%= link_to "All Assignments", assignments_path, class: "navbar" %> </li>
+          <li class="nav-link"> <%= link_to "New Student", new_student_path, class: "navbar" %> </li>
+          <li class="nav-link"> <%= link_to "View Students", students_path, class: "navbar" %> </li>
+          <li class="nav-link"> <%= link_to "View Parents", parents_path, class: "navbar" %> </li>
+            <li class="nav-link"> <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
 
-      </ul>
+        </ul>
 
-    </nav>
+      </nav>
 
-  </div>
-</header>
+    </div>
+  </header>
+<% end %>
+
 <body>
 
 
