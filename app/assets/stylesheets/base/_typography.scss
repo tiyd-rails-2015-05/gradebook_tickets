@@ -26,7 +26,7 @@ p {
 a {
   color: white;
   text-decoration: none;
-  transition: color 0.1s linear;
+  transition: color 0.2s linear;
 
   &:active,
   &:focus,
@@ -38,6 +38,17 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+a.navbar {
+  font-family: 'Rock Salt', cursive;
+  color: white;
+
+  // font-family: 'Covered By Your Grace', cursive;
+  // font-size: 20px;
+
+  // font-family: 'Just Me Again Down Here', cursive;
+  // font-size: 28px;
 }
 
 hr {

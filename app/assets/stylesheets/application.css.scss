@@ -17,8 +17,10 @@
 @import "base/grid-settings";
 @import "neat";
 @import "base/base";
+@import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Covered+By+Your+Grace|Rock+Salt); //We only use Rock+Salt, maybe we shoudl delete the other two fonts
 
 //nav options, findnav, findfoot, find hero
+
 
  body{
 //   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
