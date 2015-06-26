@@ -13,17 +13,26 @@
           <%= link_to "All Assignments", assignments_path, class: "navbar" %>
         </li>
         <li class="nav-link">
-          <%= link_to "New Student", new_student_path, class: "navbar" %>
-        </li>
-        <li class="nav-link">
-          <%= link_to "View Students", students_path, class: "navbar" %>
-        </li>
-        <li class="nav-link">
           <%= link_to "View Parents", parents_path, class: "navbar" %>
         </li>
         <li class="nav-link">
-          <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
-      </ul>
+          <%= link_to "Generate API Key", new_api_key_path, class: "navbar" %>
+        </li>
+
+        <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Students</a>
+          <ul class="submenu">
+            <li class="nav-link">
+              <%= link_to "View Students", students_path, class: "navbar" %>
+            </li>
+            <li class="nav-link">
+              <%= link_to "New Student", new_student_path, class: "navbar" %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-link">
+          <%= link_to "Logout", sessions_logout_path, class: "navbar" %>
+        </li>
     </nav>
   </div>
 </header>

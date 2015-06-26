@@ -1,0 +1,7 @@
+<h1>Gradebook API Key</h1>
+<p>For access to student information via API, users must generate a secure key.</p>
+
+<%= form_for @apikey do |f| %>
+<%= f.submit "Generate API Key" %>
+<% end %>
+<button type="button" class="btn btn-default"><%= link_to "Home", root_path %></button>

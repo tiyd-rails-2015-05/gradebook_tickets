@@ -10,7 +10,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert response.body.match("Welcome")
     assert_select "img", 1
-    assert_select "button", 5
+    assert_select "button", 6
 
     get assignments_path
     assert_response :success
