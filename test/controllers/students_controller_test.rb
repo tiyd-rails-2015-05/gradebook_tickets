@@ -11,6 +11,7 @@ class StudentsControllerTest < ActionController::TestCase
   setup do
     @student = students(:one)
     @teacher = teachers(:one)
+    session[:user_id] = @teacher.id
   end
 
   test "should get index" do
@@ -62,6 +63,6 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should grant access with token" do
     get :index, format: :json, token: "token1"
-    assert response.body.match("student1")
+    assert response.body.match('"teacher":')
   end
 end
