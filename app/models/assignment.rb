@@ -4,8 +4,15 @@ class Assignment < ActiveRecord::Base
   accepts_nested_attributes_for :grades
 
   def average
-    students = Student.where(teacher_id: self.teacher.id).count
-    self.grades.sum(:score)/students
+    students = Student.where(teacher_id: self.teacher.id)
+    num_students_with_grades = students.select{|s| s.has_grade?(self.id)}.count
+
+    if num_students_with_grades > 0
+      self.grades.sum(:score)/num_students_with_grades
+    else
+      "No scores yet"
+    end
+
   end
 
   def assign
