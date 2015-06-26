@@ -1,6 +1,16 @@
 <h1>Gradebook API Key</h1>
 <p>For access to student information via API, users must generate a secure key.</p>
 
+<p>Generate JSON data on all Teachers, Students, or Assignments in the following format:</p>
+<p>(Options include: teachers, students, assignments)</p>
+<p>https://gradebook-tickets.herokuapp.com/api/v1/OPTION.json?token=API_KEY</p>
+
+<p>Generate JSON data for one Teacher, Student, or Assignment by passing in an ID in the following format:</p>
+<p>(Options include: teachers, students, assignments)</p>
+<p>https://gradebook-tickets.herokuapp.com/api/v1/OPTION/ID.json?token=API_KEY</p>
+
+
+
 <%= form_for @apikey do |f| %>
 <%= f.submit "Generate API Key" %>
 <% end %>
