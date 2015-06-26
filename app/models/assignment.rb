@@ -5,10 +5,14 @@ class Assignment < ActiveRecord::Base
 
   def average
     students = Student.where(teacher_id: self.teacher.id)
+    num_students_with_grades = students.select{|s| s.has_grade?(self.id)}.count
 
-    num_students = students.select{|s| s.has_grade?(self.id)}.count
-    self.grades.sum(:score)/num_students
-
+    if num_students_with_grades > 0
+      self.grades.sum(:score)/num_students_with_grades
+    else
+      "No scores yet"
+    end
+        
   end
 
   def assign
