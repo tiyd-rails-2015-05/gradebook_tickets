@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class StudentTest < ActiveSupport::TestCase
+
   test "has_grade?" do
     bob = students(:one)
     assignment = Assignment.create(name: "test", due: Date.today, teacher_id: 1)
@@ -12,4 +13,11 @@ class StudentTest < ActiveSupport::TestCase
 
     assert bob.has_grade?(assignment.id)
   end
+
+   test "get grade" do
+     test_student = students(:three)
+     assignment_test = assignments(:one)
+     assert_equal 100, test_student.get_grade(assignment_test.id)
+   end
+
 end

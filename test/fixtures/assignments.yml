@@ -9,3 +9,8 @@ two:
   name: "assignment2"
   due: 2015-06-10
   teacher: :one
+
+three:
+  name: "assignment3"
+  due: 2015-06-10
+  teacher: :one
