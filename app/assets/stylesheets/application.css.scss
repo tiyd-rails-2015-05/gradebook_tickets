@@ -19,13 +19,20 @@
 @import "base/base";
 @import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Covered+By+Your+Grace|Rock+Salt); //We only use Rock+Salt, maybe we shoudl delete the other two fonts
 
- 
+
 //nav options, findnav, findfoot, find hero
 body {
   margin: 0;
 
   //   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
   // background-color: rgb(143, 159, 152);
+}
+
+
+section {
+  @include outer-container;
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
 }
 .app-form {
   @include border-style(solid);
