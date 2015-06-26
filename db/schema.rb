@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626182742) do
+ActiveRecord::Schema.define(version: 20150626192326) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "name"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20150626182742) do
     t.integer  "teacher_id"
     t.integer  "student_id"
     t.integer  "parent_id"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
