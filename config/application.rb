@@ -26,5 +26,13 @@ module Gradebook
     config.autoload_paths << Rails.root.join('app/jobs')
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+      :bucket => ENV['GRADE_PDF_BUCKET'],
+      :access_key_id => ENV['GRADE_PDF_ACCESS'],
+      :secret_access_key => ENV['GRADE_PDF_SECRET']
+  }
+}
   end
 end

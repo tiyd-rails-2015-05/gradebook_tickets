@@ -10,7 +10,9 @@
 
 <p>
   <strong>Grades:</strong>
-
+  <% @student.grades.each do |g| %>
+    <%= g.score %> <%= link_to "Pdf", "#{g.upload_pdf}" %>
+  <% end %>
 </p>
 
 

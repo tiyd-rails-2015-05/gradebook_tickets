@@ -5,6 +5,6 @@ class ParentMailerTest < ActionMailer::TestCase
     mail = ParentMailer.weekly_email("email")
     assert_equal "Your child's weekly progress!", mail.subject
     assert_equal ["email"], mail.to
-    assert_match "Welcome", mail.body.encoded
+    assert_match "name", mail.body.encoded
  end
 end

@@ -6,6 +6,13 @@ ruby '2.2.2'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 gem 'daemons'
+
+gem 'paperclip', "~> 4.2"
+
+gem "aws-sdk", '~> 1.6'
+
+gem 'faker'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
