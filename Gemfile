@@ -31,6 +31,8 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'omniauth-github', :github => 'intridea/omniauth-github'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
