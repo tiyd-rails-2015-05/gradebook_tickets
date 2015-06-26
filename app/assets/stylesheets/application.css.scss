@@ -20,7 +20,9 @@
 @import "base/base";
 @import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Covered+By+Your+Grace|Rock+Salt); //We only use Rock+Salt, maybe we shoudl delete the other two fonts
 
+h1{
 
+}
 //nav options, findnav, findfoot, find hero
 
   @include reset-all;
@@ -529,7 +531,7 @@
   $base-border-radius: 3px !default;
   $base-accent-color: #477dca !default;
   $large-screen: em(860) !default;
-
+  
   //////////////////////////////////////////////////////////////////////////////////
   $hero-background-top: #7f99be;
   $hero-background-bottom: #20392b;
