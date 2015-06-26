@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+
+gem 'whenever', :require => false
+gem 'delayed_job_active_record'
+gem 'daemons'
+
 gem 'paperclip', "~> 4.2"
 
 gem "aws-sdk", '~> 1.6'

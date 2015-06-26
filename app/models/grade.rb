@@ -3,7 +3,4 @@ class Grade < ActiveRecord::Base
   validates_attachment_content_type :upload_pdf, :content_type => /.*/
   belongs_to :assignment
   belongs_to :student
-
-
-
 end
