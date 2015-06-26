@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   post 'sessions/login'
   get 'sessions/logout'
 
-  resources :assignments
+  resources :assignments do
+    member do
+      patch 'update_grades'
+    end
+  end
   resources :grades
   resources :parents
   resources :students
