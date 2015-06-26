@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
         end
       end
     else
-      flash.now[:notice] = "Please Login"
+      
     end
   end
 

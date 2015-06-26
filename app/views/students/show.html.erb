@@ -1,22 +1,26 @@
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Grades:</strong>
-
-</p>
+<div class="app-form">
 
 
+  <p>
+    <strong>Name:</strong>
+    <%= @student.name %>
+  </p>
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_student_path(@student) %></button>
-  <button type="button" class="btn btn-default"><%= link_to 'View Roster', students_path %></button>
-  <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
+  <p>
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </p>
+
+  <p>
+    <strong>Grades:</strong>
+
+  </p>
+
+
+
+  <div >
+    <%= link_to 'Edit', edit_student_path(@student) %>
+    <%= link_to 'View Roster', students_path %>
+    <%= link_to 'Home', root_path %>
+  </div>
 </div>

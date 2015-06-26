@@ -1,9 +1,54 @@
-<h1>Login</h1>
+<!-- <h1>Login</h1>
 
-<%= form_tag do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Login"%>
-<% end %>
+<div class="app-form">
+  <%= form_tag do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <%= submit_tag "Login"%>
+  <% end %>
+</div> -->
+
+
+<!-- <div class="image-gradient-dynamic">
+  <img src="oldmain.jpg">
+  <div class="overlay"></div>
+  <div class="copy">
+    <p>Dynamic height container</p>
+  </div>
+</div> -->
+
+<div class="hero">
+	<div class="hero-inner">
+    <a href="" class="hero-logo"><img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image"></a>
+		<div class="hero-copy">
+			<h1>Gradebook</h1>
+      <div class="modal">
+        <label for="modal-1">
+          <div class="modal-trigger">Login to Continue</div>
+        </label>
+        <input class="modal-state" id="modal-1" type="checkbox" />
+        <div class="modal-window">
+          <div class="modal-inner">
+            <label class="modal-close" for="modal-1"></label>
+            <%= render partial: '/refills/modal' %>
+  				</div>
+        </div>
+      </div>
+		</div>
+
+    <p>
+			Here at Potato Wizards, we strive to constantly innovate. </br> It's not only important
+			for us to put out quality products, but to also push the envelope of tradiional conventions</br>
+			Enter Gradebook</br>
+			Nationwide, educators are trying to keep up with the growing number of students and while the </br>
+			number of students grow the number of educators does not.</br> Gradebook seeks to give more power
+			to the educator by freeing up time managing logistics to allow more time for quality instruction.</br>
+      Gradebook represents the next level of inovation from the team at Potato Wizards.</br>
+			With Gradebook, we make it easier for educators to manage their classroom through a </br>
+			natural and seemless interface. Take control of classroom logistics with Gradbook, a Potato Wizards production.</br>
+
+    </p>
+	</div>
+</div>

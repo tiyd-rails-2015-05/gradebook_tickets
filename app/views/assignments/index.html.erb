@@ -2,12 +2,12 @@
 
 <h1>Listing Assignments</h1>
 
-<table class="table table-striped">
+<table class="tables">
   <thead>
     <tr>
       <th>Name</th>
       <th>Due</th>
-      <th colspan="3"></th>
+      <th colspan="3">Options</th>
     </tr>
   </thead>
 
@@ -16,10 +16,10 @@
       <tr>
         <td><%= assignment.name %></td>
         <td><%= assignment.due %></td>
-        <div class="btn-group" role="group" aria-label="...">
-          <td><button type="button" class="btn btn-default"><%= link_to 'Show', assignment %></button></td>
-          <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_assignment_path(assignment) %></button></td>
-          <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <div>
+          <td><%= link_to 'Show', assignment %></td>
+          <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+          <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div>
       </tr>
     <% end %>
@@ -28,7 +28,7 @@
 
 <br>
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"><%= link_to 'New Assignment', new_assignment_path %></button>
-  <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
+<div>
+  <%= link_to 'New Assignment', new_assignment_path %>
+  <%= link_to 'Home', root_path %>
 </div>

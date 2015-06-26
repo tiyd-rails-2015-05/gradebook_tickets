@@ -13,6 +13,15 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use bourbon when you want good styling. Made by Danai and Cruz. Don't h8.
+gem 'bourbon'
+
+# Use neat when you want neat styling. Made by Danai and Cruz. Don't h8.
+gem 'neat'
+
+# Use refills when you run out of bourbon. Made by Danai and Cruz. Don't h8.
+gem 'refills'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

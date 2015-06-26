@@ -10,16 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="app-form">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :due %><br>
+      <%= f.date_select :due %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
   </div>
-  <div class="field">
-    <%= f.label :due %><br>
-    <%= f.date_select :due %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
