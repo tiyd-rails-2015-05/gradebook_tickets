@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626164215) do
+ActiveRecord::Schema.define(version: 20150626170743) do
 
   create_table "achievements", force: :cascade do |t|
-    t.integer  "student_id"
     t.string   "name"
     t.integer  "amount"
     t.datetime "created_at",    null: false
@@ -22,19 +21,19 @@ ActiveRecord::Schema.define(version: 20150626164215) do
     t.integer  "assignment_id"
   end
 
+  create_table "achievements_students", id: false, force: :cascade do |t|
+    t.integer "achievement_id"
+    t.integer "student_id"
+  end
+
+  add_index "achievements_students", ["achievement_id"], name: "index_achievements_students_on_achievement_id"
+  add_index "achievements_students", ["student_id"], name: "index_achievements_students_on_student_id"
+
   create_table "assignments", force: :cascade do |t|
     t.string   "name"
     t.date     "due"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "grades", force: :cascade do |t|
-    t.integer  "assignment_id"
-    t.integer  "score"
-    t.integer  "student_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "parents", force: :cascade do |t|
@@ -54,14 +53,6 @@ ActiveRecord::Schema.define(version: 20150626164215) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
-
-  create_table "students_achievements", id: false, force: :cascade do |t|
-    t.integer "achievement_id"
-    t.integer "student_id"
-  end
-
-  add_index "students_achievements", ["achievement_id"], name: "index_students_achievements_on_achievement_id"
-  add_index "students_achievements", ["student_id"], name: "index_students_achievements_on_student_id"
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"

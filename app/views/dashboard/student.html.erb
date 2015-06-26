@@ -1,5 +1,5 @@
 <h1>Welcome, <%= @student.name %></h1>
-<p>Your grades:</p>
+<p>Your Achievements:</p>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -9,10 +9,10 @@
   </thead>
 
   <tbody>
-    <% @grades.each do |grade| %>
+    <% @achievements.each do |achievement| %>
       <tr>
-        <td><%= grade.assignment.name %></td>
-        <td><%= grade.score %></td>
+        <td><%= achievement.assignment.name %></td>
+        <td><%= achievement.amount %></td>
       </tr>
     <% end %>
   </tbody>
