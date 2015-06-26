@@ -1,0 +1,29 @@
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a class="logo" href="javascript:void(0)">
+      <%= image_tag asset_url("professor-512-white.png") %>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul class="navigation-menu show" id="js-navigation-menu">
+        <li class="nav-link">
+          <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "All Assignments", assignments_path, class: "navbar" %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "New Student", new_student_path, class: "navbar" %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "View Students", students_path, class: "navbar" %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "View Parents", parents_path, class: "navbar" %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
