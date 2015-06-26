@@ -17,7 +17,7 @@ class DashboardController < ApplicationController
 
   def student
     @student = Student.find_by_id(session[:user_id])
-    @grades = Grade.where(student_id: session[:user_id]).all
+    @grades = Achievement.where(student: @student)
   end
 
   def parent
