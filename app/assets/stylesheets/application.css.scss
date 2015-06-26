@@ -423,7 +423,7 @@
 .footer-2 {
 
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-spacing: 1.5em !default;
+  $base-spacing: .5em 2em .25em;
   $base-accent-color: #477dca !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
