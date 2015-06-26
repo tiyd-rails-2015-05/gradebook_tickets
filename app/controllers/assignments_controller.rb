@@ -74,4 +74,5 @@ class AssignmentsController < ApplicationController
     def assignment_params
       params.require(:assignment).permit(:name, :due)
     end
+
 end
