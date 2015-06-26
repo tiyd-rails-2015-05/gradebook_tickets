@@ -1,6 +1,7 @@
 class Assignment < ActiveRecord::Base
   has_many :grades
   belongs_to :teacher
+  has_many :students, through: :grades
   accepts_nested_attributes_for :grades
 
   def average
