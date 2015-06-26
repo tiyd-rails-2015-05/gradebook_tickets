@@ -6,78 +6,16 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <% if session[:user_id] %>
-  <header class="navigation" role="banner">
-    <div class="navigation-wrapper">
-      <a class="logo" href="javascript:void(0)">
-        <%= image_tag asset_url("professor-512-white.png") %>
-      </a>
-      <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
-      <nav role="navigation">
-        <ul class="navigation-menu show" id="js-navigation-menu">
-          <li class="nav-link">
-            <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
-          </li>
-          <li class="nav-link">
-            <%= link_to "All Assignments", assignments_path, class: "navbar" %>
-          </li>
-          <li class="nav-link">
-            <%= link_to "New Student", new_student_path, class: "navbar" %>
-          </li>
-          <li class="nav-link">
-            <%= link_to "View Students", students_path, class: "navbar" %>
-          </li>
-          <li class="nav-link">
-            <%= link_to "View Parents", parents_path, class: "navbar" %>
-          </li>
-          <li class="nav-link">
-            <%= link_to "Logout", sessions_logout_path, class: "navbar" %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <% end %>
   <body>
+    <% if session[:user_id] %>
+      <%= render '/layouts/header' %>
+    <% end %>
     <p id="notice"><%= notice %></p>
     <div class="container">
       <div class="row">
         <%= yield %>
       </div>
     </div>
-<!-- <div class="wrapper-for-content-outside-of-footer">
-  </div> -->
-    <footer class="footer-2" role="contentinfo">
-      <div class="footer-logo">
-        <img alt="Logo image" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png">
-      </div>
-      <ul>
-        <li><a href="javascript:void(0)">About</a></li>
-        <li><a href="javascript:void(0)">Contact</a></li>
-        <li><a href="javascript:void(0)">Products</a></li>
-      </ul>
-      <div class="footer-secondary-links">
-        <ul>
-          <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-          <li><a href="javascript:void(0)">Privacy Policy</a></li>
-        </ul>
-        <ul class="footer-social">
-          <li>
-            <a href="javascript:void(0)">
-              <img alt="Facebook" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <img alt="Twitter" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png">
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <img alt="YouTube" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <%= render '/layouts/footer' %>
   </body>
 </html>
