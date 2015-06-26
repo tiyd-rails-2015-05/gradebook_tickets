@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :api_keys
   get 'api_keys/new'
 
   get 'api_keys/create'
+  post 'api_keys/create'
 
   get 'api_keys/show'
 
