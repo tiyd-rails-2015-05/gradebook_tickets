@@ -19,6 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every :friday, :at => '12:45pm' do
+# every 2.minutes do
+#   runner "Parent.send_email", :environment => 'development'
+# end
+
+every :friday, :at => '3:30pm' do
   runner "Parent.send_email", :environment => 'development'
 end
