@@ -31,8 +31,16 @@ body {
 
 section {
   @include outer-container;
-  aside { @include span-columns(3); }
-  article { @include span-columns(9); }
+  aside {
+    @include span-columns(3);
+    font-size: 20px;
+    h1{color: rgb(231, 0, 62);
+    }
+
+    }
+  article { @include span-columns(9);
+    }
+
 }
 .app-form {
   @include border-style(solid);
