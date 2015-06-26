@@ -24,5 +24,7 @@ module Gradebook
     config.active_record.raise_in_transactional_callbacks = true
     config.active_job.queue_adapter = :delayed_job
     config.autoload_paths << Rails.root.join('app/jobs')
+    config.time_zone = 'Eastern Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end
