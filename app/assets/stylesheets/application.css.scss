@@ -27,6 +27,13 @@ body {
   //   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
   // background-color: rgb(143, 159, 152);
 }
+
+
+section {
+  @include outer-container;
+  aside { @include span-columns(3); }
+  article { @include span-columns(9); }
+}
 .app-form {
   @include border-style(solid);
   @include padding(20px 20px 20px 20px);
