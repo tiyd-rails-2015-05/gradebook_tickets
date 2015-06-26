@@ -5,9 +5,10 @@ class Assignment < ActiveRecord::Base
 
   def average
     students = Student.where(teacher_id: self.teacher.id)
-    num_students = students.select{|s| s.has_grade?(self.id)}.count
 
+    num_students = students.select{|s| s.has_grade?(self.id)}.count
     self.grades.sum(:score)/num_students
+
   end
 
   def assign
@@ -16,4 +17,5 @@ class Assignment < ActiveRecord::Base
       Grade.create(student_id: s.id, assignment_id: self.id)
     end
   end
+
 end

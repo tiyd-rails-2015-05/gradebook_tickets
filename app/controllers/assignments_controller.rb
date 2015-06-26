@@ -12,7 +12,6 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1.json
   def show
     @grades = Grade.where(assignment_id: @assignment.id)
-    @students = Student.where(teacher_id: session[:user_id])
   end
 
   # GET /assignments/new
