@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :teacher_logged_in?, only: [:instructor]
+  before_action :teacher_logged_in?, only: [:teacher]
   before_action :student_logged_in?, only: [:student]
   before_action :parent_logged_in?, only: [:parent]
 
