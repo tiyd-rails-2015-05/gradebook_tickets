@@ -14,7 +14,7 @@
   <%= f.fields_for :grades do |ff| %>
     <div>
       <span><%= ff.object.student.name %></span>
-      <span><%= ff.number_field :score, value: ff.object.score %></span>
+      <span><%= ff.number_field :score %></span>
     </div></br>
   <% end %>
   <h4>Class Average: <span id="average"><%= @assignment.average %></span></h4>
