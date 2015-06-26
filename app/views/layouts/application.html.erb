@@ -10,7 +10,7 @@
     <% if session[:user_id] %>
       <%= render '/layouts/header' %>
     <% end %>
-    <p id="notice"><%= notice %></p>
+    <p id="notice" class="center"><%= notice %></p>
     <div class="container">
       <div class="row">
         <%= yield %>

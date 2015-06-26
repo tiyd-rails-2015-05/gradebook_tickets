@@ -81,11 +81,11 @@ header.navigation {
   .logo {
     float: left;
     max-height: $navigation-height;
-    padding-left: $navigation-padding;
-    padding-right: 2em;
+    // padding-left: $navigation-padding;
+    padding-left: 5%;
     img {
       max-height: $navigation-height;
-      padding: 0.5em 0;
+      padding: 0.4em 0;
     }
   }
 
@@ -115,6 +115,7 @@ header.navigation {
     z-index: 9999999;
     @include media ($horizontal-bar-mode) {
       float: right;
+      margin-right: 5%;
     }
   }
   ul.navigation-menu {

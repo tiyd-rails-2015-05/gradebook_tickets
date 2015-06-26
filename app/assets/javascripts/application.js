@@ -58,3 +58,7 @@ var audio = new Audio('/assets/chalk1.mp3');
 document.onkeydown = function() {
   audio.play();
 }
+
+$(function(){
+		$('#notice').fadeOut(2000);
+});
