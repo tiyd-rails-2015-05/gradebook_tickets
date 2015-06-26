@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def check_api_key
     if params[:format] == 'json'
-      blow up
+      redirect_to api_keys_show_path, notice: "Unauthorized" unless ApiKey.exists?(token: params[:token])
     end
   end
 end
