@@ -62,6 +62,6 @@ class StudentsControllerTest < ActionController::TestCase
 
   test "should grant access with token" do
     get :index, format: :json, token: "token1"
-    assert response.body.match('"teacher":')
+    assert response.body.match("student1")
   end
 end
