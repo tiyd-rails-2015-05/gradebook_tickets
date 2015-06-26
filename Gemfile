@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use bourbon when you want good styling. Made by Danai and Cruz. Don't h8.
 gem 'bourbon'
+gem "font-awesome-rails"
 
 # Use neat when you want neat styling. Made by Danai and Cruz. Don't h8.
 gem 'neat'
