@@ -78,19 +78,21 @@ header.navigation {
   width: 100%;
   z-index: 999;
   .navigation-wrapper {
-    @include clearfix;
-    @include outer-container;
+    // @include clearfix;
+    // @include outer-container;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     z-index: 9999;
   }
   .logo {
     float: left;
     max-height: $navigation-height;
-    padding-left: $navigation-padding;
-    padding-right: 2em;
+    // padding-left: $navigation-padding;
+    padding-left: 5%;
     img {
       max-height: $navigation-height;
-      padding: 0.8em 0;
+      padding: 0.4em 0;
     }
   }
 
@@ -119,7 +121,8 @@ header.navigation {
     min-height: $navigation-height;
     z-index: 9999999;
     @include media ($horizontal-bar-mode) {
-      float: left;
+      float: right;
+      margin-right: 5%;
     }
   }
   ul.navigation-menu {

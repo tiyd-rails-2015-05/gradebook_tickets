@@ -1,34 +1,37 @@
 <footer class="footer-2" role="contentinfo">
   <div class="footer-logo">
-    <img alt="Logo image" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png">
+    <%= image_tag asset_url("professor-512-white.png") %>
   </div>
   <ul>
     <li>
-      <%= link_to "About", pages_about_path %>
+      <%= link_to "About", about_path %>
     </li>
     <li>
-      <%= link_to "Contact", pages_contact_path %>
+      <%= link_to "Contact", contact_path %>
     </li>
-    <li><a href="javascript:void(0)">Products</a></li>
   </ul>
   <div class="footer-secondary-links">
     <ul>
-      <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-      <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      <li>
+        <%= link_to "Terms and Conditions", terms_and_conditions_path %>
+      </li>
+      <li>
+        <%= link_to "Privacy Policy", privacy_policy_path %>
+      </li>
     </ul>
     <ul class="footer-social">
       <li>
-        <a href="javascript:void(0)">
+        <a href="https://www.facebook.com/" target="_blank">
           <img alt="Facebook" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png">
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)">
+        <a href="https://twitter.com/" target="_blank">
           <img alt="Twitter" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png">
         </a>
       </li>
       <li>
-        <a href="javascript:void(0)">
+        <a href="https://www.youtube.com/" target="_blank">
           <img alt="YouTube" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png">
         </a>
       </li>

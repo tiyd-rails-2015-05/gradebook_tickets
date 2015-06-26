@@ -6,7 +6,6 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
-
 h1,
 h2,
 h3,
@@ -21,43 +20,35 @@ h6 {
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
 }
-
 p {
   margin: 0;
   &.medium {
     font-size: 30px;
   }
-
 }
-
 a {
   color: white;
   text-decoration: none;
   transition: color 0.2s linear;
-
   &:active,
   &:focus,
   &:hover {
     color: darken($action-color, 15%);
   }
-
   &:active,
   &:focus {
     outline: none;
   }
 }
-
 a.navbar {
   font-family: 'Rock Salt', cursive;
   color: white;
 
   // font-family: 'Covered By Your Grace', cursive;
   // font-size: 20px;
-
   // font-family: 'Just Me Again Down Here', cursive;
   // font-size: 28px;
 }
-
 hr {
   border-bottom: $base-border;
   border-left: none;
@@ -65,19 +56,29 @@ hr {
   border-top: none;
   margin: $base-spacing 0;
 }
-
 img,
 picture {
   margin: 0;
   max-width: 100%;
 }
-
 .center {
   text-align: center;
 }
-
 .fancy {
   font-family: 'Rock Salt', cursive;
   color: white;
   text-shadow: 1px 1px black;
+}
+p#notice {
+  z-index: 100;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  font-size: 100px;
+  color: white;
+  text-shadow: 0 0 10px black;
 }
