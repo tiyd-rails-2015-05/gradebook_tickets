@@ -1,6 +1,5 @@
-class Student < ActiveRecord::Base
+class Student < User
   has_many :grades
   has_many :parents
   belongs_to :teacher
-  has_secure_password
 end

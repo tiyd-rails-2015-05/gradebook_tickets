@@ -1,4 +1,3 @@
-class Parent < ActiveRecord::Base
+class Parent < User
   belongs_to :student
-  has_secure_password
 end

@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :teacher_logged_in?
+  # before_action :teacher_logged_in?
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
