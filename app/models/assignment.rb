@@ -12,7 +12,7 @@ class Assignment < ActiveRecord::Base
     else
       "No scores yet"
     end
-        
+
   end
 
   def assign
