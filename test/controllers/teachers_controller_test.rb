@@ -53,4 +53,15 @@ class TeachersControllerTest < ActionController::TestCase
 
     assert_redirected_to teachers_path
   end
+
+  test "should deny access without token" do
+    get :index, format: :json
+    assert_redirected_to api_keys_show_path
+  end
+
+  test "should grant access with token" do
+    get :index, format: :json, token: "token1"
+    assert response.body.match('"email":')
+    assert response.body.match('"students":')
+  end
 end

@@ -1,11 +1,16 @@
 class AssignmentsController < ApplicationController
   before_action :teacher_logged_in?
-  before_action :set_assignment, only: [:edit, :update, :destroy]
+  before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
   # GET /assignments.json
   def index
     @assignments = Assignment.all
+  end
+
+  # GET /assignments/1
+  # GET /assignments/1.json
+  def show
   end
 
   # GET /assignments/new
@@ -62,4 +67,5 @@ class AssignmentsController < ApplicationController
     def assignment_params
       params.require(:assignment).permit(:teacher_id, :name, :due, grades_attributes: [:id, :score, :student_id])
     end
+
 end
