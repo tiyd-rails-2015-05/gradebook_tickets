@@ -8,12 +8,6 @@ class AssignmentsController < ApplicationController
     @assignments = Assignment.all
   end
 
-  # GET /assignments/1
-  # GET /assignments/1.json
-  def show
-    @grades = Grade.where(assignment_id: @assignment.id)
-  end
-
   # GET /assignments/new
   def new
     @assignment = Assignment.new(teacher_id: session[:user_id])
@@ -22,6 +16,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments/1/edit
   def edit
     @teacher = Teacher.find_by_id(session[:user_id])
+    @grades = Grade.where(assignment_id: @assignment.id)
   end
 
   # POST /assignments
@@ -41,7 +36,7 @@ class AssignmentsController < ApplicationController
     end
   end
 
-  def update_grades
+  def update
     if @assignment.update(assignment_params)
       render 'assignments/update'
     else
@@ -49,22 +44,6 @@ class AssignmentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /assignments/1
-  # PATCH/PUT /assignments/1.json
-  def update
-    respond_to do |format|
-      if @assignment.update(assignment_params)
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @assignment }
-      else
-        format.html { render :edit }
-        format.json { render json: @assignment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /assignments/1
-  # DELETE /assignments/1.json
   def destroy
     @assignment.destroy
     respond_to do |format|
