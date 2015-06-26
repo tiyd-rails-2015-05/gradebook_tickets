@@ -6,7 +6,8 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body class="fa-spin">
+  <!-- <body class="fa-spin"> -->
+  <body>
     <% if session[:user_id] %>
       <%= render '/layouts/header' %>
     <% end %>
