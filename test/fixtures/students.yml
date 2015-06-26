@@ -11,3 +11,9 @@ two:
   email: "studentemail2"
   password_digest: <%= BCrypt::Password.create("password") %>
   teacher: :one
+
+three:
+  name: "student3"
+  email: "studentemail3"
+  password_digest: <%= BCrypt::Password.create("password") %>
+  teacher: :one
