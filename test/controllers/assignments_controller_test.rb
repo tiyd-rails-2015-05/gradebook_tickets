@@ -32,11 +32,6 @@ class AssignmentsControllerTest < ActionController::TestCase
     assert_redirected_to assignments_path
   end
 
-  test "should show assignment" do
-    get :show, id: @assignment
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @assignment
     assert_response :success
@@ -44,7 +39,7 @@ class AssignmentsControllerTest < ActionController::TestCase
 
   test "should update assignment" do
     patch :update, id: @assignment, assignment: { due: @assignment.due, name: @assignment.name }
-    assert_redirected_to assignment_path(assigns(:assignment))
+    assert_response :success
   end
 
   test "should destroy assignment" do

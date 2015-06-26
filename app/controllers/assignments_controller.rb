@@ -28,7 +28,7 @@ class AssignmentsController < ApplicationController
       if @assignment.save
         @assignment.assign
         format.html { redirect_to assignments_path, notice: 'Assignment was successfully created.' }
-        format.json { render :show, status: :created, location: @assignment }
+        format.json { render :edit, status: :created, location: @assignment }
       else
         format.html { render :new }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class AssignmentsController < ApplicationController
     if @assignment.update(assignment_params)
       render 'assignments/update'
     else
-      render :show
+      render :edit
     end
   end
 
