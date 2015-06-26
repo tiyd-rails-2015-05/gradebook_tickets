@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'api_keys/new'
+
+  get 'api_keys/create'
+
+  get 'api_keys/show'
+
   get 'dashboard/student'
 
   get 'dashboard/parent'
