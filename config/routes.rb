@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+#footer-----------------
   get 'pages/about'
 
   get 'pages/contact'
+#------------------------
+  resources :api_keys
+  get 'api_keys/new'
+
+  get 'api_keys/create'
+  post 'api_keys/create'
+
+  get 'api_keys/show'
+
 
   get 'dashboard/student'
 
@@ -25,6 +35,13 @@ Rails.application.routes.draw do
 
   get 'dashboard/index'
   root 'dashboard#index'
+
+  get 'api/v1/teachers' => 'teachers#index'
+  get 'api/v1/teachers/:id' => 'teachers#show'
+  get 'api/v1/students' => 'students#index'
+  get 'api/v1/students/:id' => 'students#show'
+  get 'api/v1/assignments' => 'assignments#index'
+  get 'api/v1/assignments/:id' => 'assignments#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

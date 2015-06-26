@@ -9,3 +9,8 @@ two:
   assignment: :one
   score: 1
   student: :one
+
+three:
+  assignment: :one
+  score: 100
+  student: :three
