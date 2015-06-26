@@ -71,8 +71,10 @@ header.navigation {
   width: 100%;
   z-index: 999;
   .navigation-wrapper {
-    @include clearfix;
-    @include outer-container;
+    // @include clearfix;
+    // @include outer-container;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     z-index: 9999;
   }
@@ -112,7 +114,7 @@ header.navigation {
     min-height: $navigation-height;
     z-index: 9999999;
     @include media ($horizontal-bar-mode) {
-      float: left;
+      float: right;
     }
   }
   ul.navigation-menu {
