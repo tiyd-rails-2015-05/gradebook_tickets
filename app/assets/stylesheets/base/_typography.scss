@@ -13,6 +13,9 @@ h3,
 h4,
 h5,
 h6 {
+  &.big {
+    font-size: 60px;
+  }
   font-family: $heading-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
@@ -20,7 +23,11 @@ h6 {
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0;
+  &.medium {
+    font-size: 30px;
+  }
+
 }
 
 a {
@@ -63,4 +70,14 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.fancy {
+  font-family: 'Rock Salt', cursive;
+  color: white;
+  text-shadow: 1px 1px black;
 }
