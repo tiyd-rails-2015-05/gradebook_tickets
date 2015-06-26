@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-#footer-----------------
-  get 'pages/about'
+  get 'terms-and-conditions' => 'pages#terms'
 
-  get 'pages/contact'
+  get 'privacy-policy' => 'pages#privacy'
+
+#footer-----------------
+  get 'about' => 'pages#about'
+
+  get 'contact' => 'pages#contact'
 #------------------------
   resources :api_keys
   get 'api_keys/new'

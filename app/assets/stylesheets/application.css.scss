@@ -19,7 +19,7 @@
 @import "base/base";
 @import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here|Covered+By+Your+Grace|Rock+Salt); //We only use Rock+Salt, maybe we shoudl delete the other two fonts
 
- 
+
 //nav options, findnav, findfoot, find hero
 body {
   margin: 0;
@@ -83,7 +83,7 @@ header.navigation {
     padding-right: 2em;
     img {
       max-height: $navigation-height;
-      padding: 0.8em 0;
+      padding: 0.5em 0;
     }
   }
 
