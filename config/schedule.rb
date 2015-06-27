@@ -23,6 +23,6 @@
 #   runner "Parent.send_email", :environment => 'development'
 # end
 
-every :friday, :at => '3:16pm' do
+every :friday, :at => '4:50pm' do
   runner "Parent.send_email", :environment => 'development'
 end
