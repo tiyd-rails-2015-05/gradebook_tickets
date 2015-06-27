@@ -23,25 +23,23 @@
 //nav options, findnav, findfoot, find hero
 body {
   margin: 0;
+  background:
+   /* top, transparent red */
+   linear-gradient(
+     rgba(62, 166, 121, 0.45),
+     rgba(62, 166, 121, 0.45)
+   ),
+
+ url("main.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+
 
   //   @include background(radial-gradient(rgb(122, 122, 122),rgb(125, 117, 119)));
   // background-color: rgb(143, 159, 152);
 }
 
-
-section {
-  @include outer-container;
-  aside {
-    @include span-columns(3);
-    font-size: 20px;
-    h1{color: rgb(231, 0, 62);
-    }
-
-    }
-  article { @include span-columns(9);
-    }
-
-}
 .app-form {
   @include border-style(solid);
   @include padding(20px 20px 20px 20px);
@@ -504,7 +502,7 @@ header.navigation {
   background-size: cover;
   padding-bottom: 3em;
   .hero-logo img {
-    height: 4em;
+    height: 10em;
     margin-bottom: 1em;
   }
   .hero-inner {

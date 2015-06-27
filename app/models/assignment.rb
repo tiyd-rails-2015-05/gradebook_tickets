@@ -17,7 +17,7 @@ class Assignment < ActiveRecord::Base
   end
 
   def assign
-    students = Student.where(teacher_id: self.teacher.id)
+    students = Student.where(teacher_id: self.teacher_id)
     students.each do |s|
       Grade.create(student_id: s.id, assignment_id: self.id)
     end
