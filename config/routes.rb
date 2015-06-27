@@ -1,27 +1,21 @@
 Rails.application.routes.draw do
+  #footer-----------------
   get 'terms-and-conditions' => 'pages#terms'
-
   get 'privacy-policy' => 'pages#privacy'
-
-#footer-----------------
   get 'about' => 'pages#about'
-
   get 'contact' => 'pages#contact'
-#------------------------
+  #------------------------
   resources :api_keys
   get 'api_keys/new'
-
   get 'api_keys/create'
   post 'api_keys/create'
-
   get 'api_keys/show'
 
 
   get 'dashboard/student'
-
   get 'dashboard/parent'
-
   get 'dashboard/teacher'
+
 
   get 'sessions/login'
   post 'sessions/login'
