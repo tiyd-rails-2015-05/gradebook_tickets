@@ -1,0 +1,36 @@
+<%= form_for @assignment, remote: true do |f| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :due %><br>
+    <%= f.date_select :due %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :teacher_id %>
+  </div>
+
+  <%= f.fields_for :grades do |ff| %>
+    <div>
+      <span><%= ff.object.student.name %></span>
+      <span><%= ff.number_field :score %></span>
+    </div></br>
+  <% end %>
+  <h4>Class Average: <span><%= @assignment.average %></span></h4>
+
+  <%= f.submit "Update", id: "submit-change-grades"%>
+
+<% end %>

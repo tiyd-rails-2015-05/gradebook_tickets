@@ -13,13 +13,13 @@ end
 
 class DashboardControllerTest < ActionController::TestCase
   test "should get student" do
-    session[:user_type] = "student"
+    current_user.type = "Student"
     get :student
     assert_response 302
   end
 
   test "should get parent" do
-    session[:user_type] = "parent"
+    current_user.type = "Parent"
     get :parent
     assert_response 302
   end

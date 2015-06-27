@@ -1,9 +1,8 @@
-<h1>Editing Assignment</h1>
+<p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
+<div id="assignment-entry"><%= render partial: 'edit_assignment' %></div>
 
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default"><%= link_to 'Show', @assignment %></button>
-  <button type="button" class="btn btn-default"><%= link_to 'Back', assignments_path %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'All Assignments', assignments_path %></button>
   <button type="button" class="btn btn-default"><%= link_to 'Home', root_path %></button>
 </div>

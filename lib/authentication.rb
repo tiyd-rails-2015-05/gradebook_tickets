@@ -1,6 +1,7 @@
 module Authentication
 
   private def teacher_logged_in?
+
     unless current_user.type == "Teacher"
       redirect_to user_session_path, notice: 'Please login to view this page.'
     end

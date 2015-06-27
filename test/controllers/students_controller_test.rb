@@ -9,7 +9,9 @@ end
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
-    @student = students(:one)
+    @student = students(:three)
+    @teacher = teachers(:six)
+    current_user.id = @teacher.id
   end
 
   test "should get index" do
@@ -42,7 +44,7 @@ class StudentsControllerTest < ActionController::TestCase
   end
 
   test "should update student" do
-    patch :update, id: @student, student: { email: @student.email, name: @student.name, password_digest: @student.password_digest }
+    patch :update, id: @student, student: { email: @student.email, name: @student.name, encrypted_password: @student.encrypted_password }
     assert_redirected_to student_path(assigns(:student))
   end
 
@@ -52,5 +54,15 @@ class StudentsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to students_path
+  end
+
+  test "should deny access without token" do
+    get :index, format: :json
+    assert_redirected_to api_keys_show_path
+  end
+
+  test "should grant access with token" do
+    get :index, format: :json, token: "token1"
+    assert response.body.match('"teacher":')
   end
 end

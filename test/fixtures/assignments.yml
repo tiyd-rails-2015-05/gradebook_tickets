@@ -2,8 +2,15 @@
 
 one:
   name: "assignment"
-  due: 2015-06-10
+  due: 2015-06-11
+  teacher: :one
 
 two:
   name: "assignment2"
-  due: 2015-06-10
+  due: 2015-06-12
+  teacher: :one
+
+three:
+  name: "assignment3"
+  due: 2015-06-13
+  teacher: :one

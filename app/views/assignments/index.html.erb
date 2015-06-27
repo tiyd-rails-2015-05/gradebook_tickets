@@ -17,7 +17,6 @@
         <td><%= assignment.name %></td>
         <td><%= assignment.due %></td>
         <div class="btn-group" role="group" aria-label="...">
-          <td><button type="button" class="btn btn-default"><%= link_to 'Show', assignment %></button></td>
           <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_assignment_path(assignment) %></button></td>
           <td><button type="button" class="btn btn-default"><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
         </div>

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
   # def login
   #   if request.post?
   #     if user = Teacher.find_by_email(params[:email])

@@ -10,6 +10,7 @@ end
 class AssignmentsControllerTest < ActionController::TestCase
   setup do
     @assignment = assignments(:one)
+    @teacher = teachers(:six)
   end
 
   test "should get index" do
@@ -25,15 +26,10 @@ class AssignmentsControllerTest < ActionController::TestCase
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      post :create, assignment: { due: @assignment.due, name: @assignment.name }
+      post :create, assignment: { due: "2015-06-04", name: "name", teacher_id: @teacher.id }
     end
 
     assert_redirected_to assignments_path
-  end
-
-  test "should show assignment" do
-    get :show, id: @assignment
-    assert_response :success
   end
 
   test "should get edit" do
@@ -42,8 +38,8 @@ class AssignmentsControllerTest < ActionController::TestCase
   end
 
   test "should update assignment" do
-    patch :update, id: @assignment, assignment: { due: @assignment.due, name: @assignment.name }
-    assert_redirected_to assignment_path(assigns(:assignment))
+    patch :update, format: :js, id: @assignment, assignment: { due: @assignment.due, name: @assignment.name, teacher_id: @teacher.id }
+    assert_response :success
   end
 
   test "should destroy assignment" do
@@ -53,4 +49,15 @@ class AssignmentsControllerTest < ActionController::TestCase
 
     assert_redirected_to assignments_path
   end
+
+  test "should deny access without token" do
+    get :index, format: :json
+    assert_redirected_to api_keys_show_path
+  end
+
+  test "should grant access with token" do
+    get :index, format: :json, token: "token1"
+    assert response.body.match('"due":')
+  end
+
 end

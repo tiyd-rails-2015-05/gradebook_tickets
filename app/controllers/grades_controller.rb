@@ -11,6 +11,7 @@ class GradesController < ApplicationController
   # GET /grades/1
   # GET /grades/1.json
   def show
+    @assignments = Assignment.all
   end
 
   # GET /grades/new
@@ -21,13 +22,13 @@ class GradesController < ApplicationController
 
   # GET /grades/1/edit
   def edit
+    @assignments = Assignment.all
   end
 
   # POST /grades
   # POST /grades.json
   def create
     @grade = Grade.new(grade_params)
-
     respond_to do |format|
       if @grade.save
         format.html { redirect_to @grade, notice: 'Grade was successfully created.' }
@@ -71,6 +72,6 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params.require(:grade).permit(:assignment_id, :score, :student_id)
+      params.require(:grade).permit(:assignment_id, :score, :student_id, :upload_pdf)
     end
 end

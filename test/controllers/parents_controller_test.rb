@@ -16,7 +16,7 @@ class ParentsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:parents)
+    assert_not_nil assigns(:students)
   end
 
   test "should get new" do
@@ -43,7 +43,7 @@ class ParentsControllerTest < ActionController::TestCase
   end
 
   test "should update parent" do
-    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, password_digest: @parent.password_digest, student_id: @parent.student_id }
+    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, encrypted_password: @parent.password_encrypted, student_id: @parent.student_id }
     assert_redirected_to parent_path(assigns(:parent))
   end
 

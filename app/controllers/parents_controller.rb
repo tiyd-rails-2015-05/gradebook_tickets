@@ -5,7 +5,7 @@ class ParentsController < ApplicationController
   # GET /parents
   # GET /parents.json
   def index
-    @parents = Parent.all
+    @students = Student.where(teacher_id: current_user.id)
   end
 
   # GET /parents/1

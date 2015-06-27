@@ -42,7 +42,7 @@ class TeachersControllerTest < ActionController::TestCase
   end
 
   test "should update teacher" do
-    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
+    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, encrypted_password: @teacher.encrypted_password }
     assert_redirected_to teacher_path(assigns(:teacher))
   end
 
@@ -52,5 +52,16 @@ class TeachersControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to teachers_path
+  end
+
+  test "should deny access without token" do
+    get :index, format: :json
+    assert_redirected_to api_keys_show_path
+  end
+
+  test "should grant access with token" do
+    get :index, format: :json, token: "token1"
+    assert response.body.match('"email":')
+    assert response.body.match('"students":')
   end
 end

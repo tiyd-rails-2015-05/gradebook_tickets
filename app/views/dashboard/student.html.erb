@@ -11,7 +11,8 @@
   <tbody>
     <% @grades.each do |grade| %>
       <tr>
-        <td><%= grade.assignment.name %></td>
+        <% pdf = grade.upload_pdf.to_s %>
+        <td><%= link_to grade.assignment.name, "#{pdf}" %></td>
         <td><%= grade.score %></td>
       </tr>
     <% end %>

@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.where(teacher_id: current_user.id)
   end
 
   # GET /students/1
@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new(teacher_id: session[:user_id])
+    @student = Student.new(teacher_id: current_user.id)
   end
 
   # GET /students/1/edit
