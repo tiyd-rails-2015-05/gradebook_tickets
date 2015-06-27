@@ -16,7 +16,7 @@ class ParentsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:parents)
+    assert_not_nil assigns(:students)
   end
 
   test "should get new" do
