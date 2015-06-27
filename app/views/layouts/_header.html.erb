@@ -33,6 +33,23 @@
         <li class="nav-link">
           <%= link_to "Logout", sessions_logout_path, class: "navbar" %>
         </li>
+
+        <!-- <ul id="flex-out">
+          <span class='slideout'>
+            <li class="menu-item pure-menu-item">
+              <%= link_to "My Surveys", root_path, class: "navbar"  %>
+            </li>
+            <li class="menu-item pure-menu-item">
+              <%= link_to "Logout", root_path, class: "navbar"  %>
+            </li>
+          </span>
+          <li class="menu-item-special">
+            <% name = @user.name.capitalize rescue nil %>
+            <% @user ||= "#" %>
+            <%= link_to "Name", root_path, class: "navbar"  %>
+          </li>
+        </ul> -->
+
     </nav>
   </div>
 </header>

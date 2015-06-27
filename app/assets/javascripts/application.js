@@ -59,6 +59,6 @@ document.onkeydown = function() {
   audio.play();
 }
 
-$(function(){
-		$('#notice').fadeOut(2000);
+$(function hideNotice(){
+		$('#notice').fadeOut(1500);
 });

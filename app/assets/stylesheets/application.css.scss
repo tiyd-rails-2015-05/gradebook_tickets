@@ -984,3 +984,45 @@ div.background {
   height: 800px;
   padding: 50px 20px 0;
 }
+
+.slideout {
+  display: none;
+  list-style-type: none;
+}
+
+.slideout-item {
+  display: block;
+  //width: 0%;
+}
+
+.slideout-item a {
+  display: block;
+  //width: 0%;
+}
+
+#flex-out:hover .slideout {
+  display: inline-flex;
+}
+
+#flex-out {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#flex-out:hover .slideout {
+  display: inline-block;
+  float: right;
+  transform: translateY(3.3em);
+  background-color: HSLA(0, 0%, 20%, 0.8);
+  color: white;
+}
+
+#flex-out {
+  display: inline-block;
+  width: 6.3em;
+}
+.menu-item-special a {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
