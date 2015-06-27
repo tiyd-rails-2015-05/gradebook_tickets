@@ -1,21 +1,44 @@
+<h1>For access to student information via API, users must generate a secure key.</h1>
 
-
-
-<p>For access to student information via API, users must generate a secure key.</p>
-    <p>Generate JSON data on all Teachers, Students, or Assignments in the following format:</p>
+<div class="cards">
+  <div class="card">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+    </div>
+    <div class="card-header">
+      Generate JSON data on all Teachers, Students, or Assignments in the following format:
+    </div>
+    <div class="card-copy">
       <p>(Options include: teachers, students, assignments)</p>
       <p>https://gradebook-tickets.herokuapp.com/api/v1/OPTION.json?token=API_KEY</p>
-      <p>Generate JSON data for one Teacher, Student, or Assignment by passing in an ID in the following format:</p>
-        <p>(Options include: teachers, students, assignments)</p>
-        <p>https://gradebook-tickets.herokuapp.com/api/v1/OPTION/ID.json?token=API_KEY</p>
+    </div>
+  </div>
 
 
+  <div class="card">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+    </div>
+    <div class="card-header">
+      Generate JSON data for one Teacher, Student, or Assignment by passing in an ID in the following format:            </div>
+    <div class="card-copy">
+      <p>(Options include: teachers, students, assignments)</p>
+      <p>https://gradebook-tickets.herokuapp.com/api/v1/OPTION/ID.json?token=API_KEY</p>
+    </div>
+  </div>
 
 
-
-
-
-<%= form_for @apikey do |f| %>
-<%= f.submit "Generate API Key" %>
-<% end %>
+  <div class="card">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+    </div>
+    <div class="card-header">
+      Ready to get Started? Click below to Generate your API Key.
+    </div>
+    <div class="card-copy">
+      <%= form_for @apikey do |f| %>
+      <%= f.submit "Generate API Key" %>
+      <% end %>            </div>
+  </div>
+</div>
 <!-- <button type="button" class="btn btn-default"><%# link_to "Home", root_path %></button> -->

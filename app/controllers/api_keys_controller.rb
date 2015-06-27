@@ -5,6 +5,7 @@ class ApiKeysController < ApplicationController
     @apikey = ApiKey.new
   end
 
+
   def create
     @random_token = SecureRandom.hex
     ApiKey.create!(token: @random_token)
