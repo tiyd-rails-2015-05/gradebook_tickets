@@ -1,11 +1,11 @@
 class StudentsController < ApplicationController
-  before_action :teacher_logged_in?
+  # before_action :teacher_logged_in?
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.where(teacher_id: session[:user_id])
+    @students = Student.where(teacher_id: current_user.id)
   end
 
   # GET /students/1
@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new(teacher_id: session[:user_id])
+    @student = Student.new(teacher_id: current_user.id)
   end
 
   # GET /students/1/edit

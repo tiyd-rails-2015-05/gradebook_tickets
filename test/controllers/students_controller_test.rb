@@ -9,9 +9,9 @@ end
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
-    @student = students(:one)
-    @teacher = teachers(:one)
-    session[:user_id] = @teacher.id
+    @student = users(:three)
+    @teacher = users(:six)
+    current_user = @teacher.id
   end
 
   test "should get index" do
@@ -44,7 +44,7 @@ class StudentsControllerTest < ActionController::TestCase
   end
 
   test "should update student" do
-    patch :update, id: @student, student: { email: @student.email, name: @student.name, password_digest: @student.password_digest }
+    patch :update, id: @student, student: { email: @student.email, name: @student.name, encrypted_password: @student.encrypted_password }
     assert_redirected_to student_path(assigns(:student))
   end
 

@@ -9,7 +9,7 @@ end
 
 class TeachersControllerTest < ActionController::TestCase
   setup do
-    @teacher = Teacher.create!(name: "teacher", email: "teacher_email", password: "password")
+    @teacher = Teacher.create!(name: "teacher", email: "teacher_email@teacher.com", password: "password")
   end
 
   test "should get index" do
@@ -42,7 +42,7 @@ class TeachersControllerTest < ActionController::TestCase
   end
 
   test "should update teacher" do
-    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
+    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, encrypted_password: @teacher.encrypted_password }
     assert_redirected_to teacher_path(assigns(:teacher))
   end
 

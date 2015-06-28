@@ -10,7 +10,7 @@ end
 class ParentsControllerTest < ActionController::TestCase
 
   setup do
-    @parent = parents(:one)
+    @parent = users(:one)
   end
 
   test "should get index" do
@@ -43,7 +43,7 @@ class ParentsControllerTest < ActionController::TestCase
   end
 
   test "should update parent" do
-    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, password_digest: @parent.password_digest, student_id: @parent.student_id }
+    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, encrypted_password: @parent.password_encrypted, student_id: @parent.student_id }
     assert_redirected_to parent_path(assigns(:parent))
   end
 
