@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :achievements
+  resources :achievements do
+    member do
+      :students
+    end
+  end
   get 'dashboard/student'
 
   get 'dashboard/parent'

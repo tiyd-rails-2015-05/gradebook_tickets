@@ -15,6 +15,7 @@ class AchievementsController < ApplicationController
   # GET /achievements/new
   def new
     @achievement = Achievement.new
+    @student = Student.find(params[:student_id])
   end
 
   # GET /achievements/1/edit
@@ -25,9 +26,10 @@ class AchievementsController < ApplicationController
   # POST /achievements.json
   def create
     @achievement = Achievement.new(achievement_params)
-
+    @student = Student.find(params[:student_id])
     respond_to do |format|
       if @achievement.save
+        @student.achievements << @achievement
         format.html { redirect_to @achievement, notice: 'Achievement was successfully created.' }
         format.json { render :show, status: :created, location: @achievement }
       else
@@ -69,6 +71,6 @@ class AchievementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def achievement_params
-      params.require(:achievement).permit(:student_id, :name, :amount)
+      params.require(:achievement).permit(:name, :amount, :student_id, :assignment_id)
     end
 end

@@ -17,7 +17,7 @@ class DashboardController < ApplicationController
 
   def student
     @student = Student.find_by_id(session[:user_id])
-    @achievements = Achievement.where(student: @student)
+    @achievements = @student.achievements
   end
 
   def parent

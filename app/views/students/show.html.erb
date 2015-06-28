@@ -9,8 +9,11 @@
 </p>
 
 <p>
-  <strong>Grades:</strong>
-
+  <strong>Achievements:</strong>
+  <% @student.achievements.each do |a| %>
+  <%= a.name %>
+  <%= a.amount %>
+  <% end %>
 </p>
 
 

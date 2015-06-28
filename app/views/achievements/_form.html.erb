@@ -12,16 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :amount %><br>
     <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= hidden_field_tag :student_id, @student.id %>
   </div>
   <div class="actions">
     <%= f.submit %>
