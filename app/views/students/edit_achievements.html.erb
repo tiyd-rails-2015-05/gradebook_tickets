@@ -1,5 +1,5 @@
   <%= form_tag(update_achievements_student_path) do %>
-    <% @achievements.each do |a| %>
+    <% @student.incomplete_achievements.each do |a| %>
 
     <div class="field">
       <%= label_tag a.name %>
@@ -7,7 +7,7 @@
     </div>
 
     <% end %>
-    
+
     <%= submit_tag "Submit!" %>
 
 <% end %>
