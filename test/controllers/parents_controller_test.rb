@@ -10,7 +10,7 @@ end
 class ParentsControllerTest < ActionController::TestCase
 
   setup do
-    @parent = parents(:one)
+    @parent = users(:one)
   end
 
   test "should get index" do

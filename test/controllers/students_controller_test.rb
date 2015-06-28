@@ -9,8 +9,8 @@ end
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
-    @student = students(:three)
-    @teacher = teachers(:six)
+    @student = users(:three)
+    @teacher = users(:six)
     current_user.id = @teacher.id
   end
 

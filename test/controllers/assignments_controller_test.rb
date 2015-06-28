@@ -10,7 +10,7 @@ end
 class AssignmentsControllerTest < ActionController::TestCase
   setup do
     @assignment = assignments(:one)
-    @teacher = teachers(:six)
+    @teacher = users(:six)
   end
 
   test "should get index" do

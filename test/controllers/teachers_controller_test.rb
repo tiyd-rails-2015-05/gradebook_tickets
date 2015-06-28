@@ -9,7 +9,7 @@ end
 
 class TeachersControllerTest < ActionController::TestCase
   setup do
-    @teacher = Teacher.create!(name: "teacher", email: "teacher_email", password: "password")
+    @teacher = Teacher.create!(name: "teacher", email: "teacher_email@teacher.com", password: "password")
   end
 
   test "should get index" do

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ApiKeysControllerTest < ActionController::TestCase
   setup do
-    @teacher = teachers(:six)
+    @teacher = users(:six)
     current_user.id = @teacher.id
     current_user.type = "Teacher"
   end

@@ -8,31 +8,31 @@ one:
   name: "name"
   email: "email"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  student: :three
+  # student: :three
 
 two:
   name: "name2"
   email: "email2"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  student: :three
+  # student: :three
 
 three:
   name: "student1"
   email: "studentemail"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  teacher: :six
+  # teacher: :six
 
 four:
   name: "student"
   email: "studentemail2"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  teacher: :six
+  # teacher: :six
 
 five:
   name: "student3"
   email: "studentemail3"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  teacher: :six
+  # teacher: :six
 
 six:
   name: "teacher"
