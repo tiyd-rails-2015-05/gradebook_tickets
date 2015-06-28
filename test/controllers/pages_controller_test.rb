@@ -7,7 +7,7 @@ class PagesControllerTest < ActionController::TestCase
   end
 
   test "should get contact" do
-    get :contact
+    get :career
     assert_response :success
   end
 
