@@ -1,22 +1,22 @@
 .image-gradient-dynamic {
-  $image-gradient-color-top: red; 
+  $image-gradient-color-top: #DB5277;
   $transparency-top: 0.9;
-  $image-gradient-color-bottom: green; 
+  $image-gradient-color-bottom: #3EA679;
   $transparency-bottom: 0.6;
   $vertical-angle: 0deg;
-  $image-gradient-color-left: teal; 
+  $image-gradient-color-left: #BF4790;
   $transparency-left: 0.8;
-  $image-gradient-color-right: yellow; 
+  $image-gradient-color-right: #F2C15B;
   $transparency-right: 0.8;
   $horizontal-angle: 90deg;
-  
+
   line-height: 0;
   position: relative;
   width: 100%;
 
   img {
    height: auto;
-   left: 0; 
+   left: 0;
    position: relative;
    top: 0;
    width: 100%;
@@ -30,10 +30,12 @@
     text-align: center;
     top: 50%;
     z-index: 999;
+    color: white;
 
-    p {
+    h1 {
       color: white;
       font-weight: 800;
+      font-size: 200
       line-height: 1.5em;
       padding: 1em 2em;
       position: relative;
@@ -41,13 +43,13 @@
   }
 
   .overlay {
-    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top), 
+    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top),
       transparentize($image-gradient-color-bottom, $transparency-bottom));
     display: block;
     @include position(absolute, 0px 0px 0px 0px);
 
     &:after {
-      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left), 
+      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left),
         transparentize($image-gradient-color-right, $transparency-right));
       @include position(absolute, 0px 0px 0px 0px);
       content: '';

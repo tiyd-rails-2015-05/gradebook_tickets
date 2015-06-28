@@ -11,13 +11,14 @@
     </div>
   <% end %>
 
+<div class="app-form">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :due %><br>
-    <%= f.date_select :due %>
+    <%= f.date_field :due %>
   </div>
   <div class="field">
     <%= f.hidden_field :teacher_id %>
@@ -34,3 +35,4 @@
   <%= f.submit "Update", id: "submit-change-grades"%>
 
 <% end %>
+</div>

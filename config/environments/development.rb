@@ -20,8 +20,8 @@ Rails.application.configure do
     address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'donotreply.com',
-    user_name:            ENV["SENDGRID_USERNAME"],
-    password:             ENV["SENDGRID_PASSWORD"],
+    user_name:            'danai-potatomaster',
+    password:             'Potatomaster1',
     authentication:       'plain',
     enable_starttls_auto: true
   }

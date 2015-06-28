@@ -5,4 +5,8 @@ class ParentMailer < ApplicationMailer
     @grades = @student.grades
     mail(to: email, subject: "Your child's weekly progress!")
   end
+
+  def test_mail
+    mail(to: 'dadkisso@gmail.com', subject: 'test email')
+  end
 end
