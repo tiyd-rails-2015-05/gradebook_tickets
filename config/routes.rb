@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'terms-and-conditions' => 'pages#terms'
   get 'privacy-policy' => 'pages#privacy'
   get 'about' => 'pages#about'
-  get 'contact' => 'pages#contact'
+  get 'career' => 'pages#career'
   #------------------------
   resources :api_keys
   get 'api_keys/new'

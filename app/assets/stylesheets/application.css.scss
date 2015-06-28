@@ -32,11 +32,28 @@
   padding: 50px 20px 0;
 }
 section {
-  background-color: blue;
+  color:black;
+  .a{
+    list-style-type: circle;
+  }
   @include outer-container;
+  background-color: rgba(#bbdecf, 0.75);
   aside { @include span-columns(3);
-  background-color: blue}
-  article { @include span-columns(9); }
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+  article { @include span-columns(9);
+  }
+}
+
+
+.about{
+  background-color: rgba(#FFF2D6, 0.75);
+  @include padding(20px 20px 20px 20px);
+  // @include position(relative, 0px 5em 10px 7em);
+  @include margin(10px 375px );
 }
 
 h1{
