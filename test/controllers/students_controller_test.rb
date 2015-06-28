@@ -11,7 +11,7 @@ class StudentsControllerTest < ActionController::TestCase
   setup do
     @student = users(:three)
     @teacher = users(:six)
-    current_user.id = @teacher.id
+    current_user = @teacher.id
   end
 
   test "should get index" do

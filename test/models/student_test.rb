@@ -15,7 +15,7 @@ class StudentTest < ActiveSupport::TestCase
   end
 
    test "get grade" do
-     test_student = students(:three)
+     test_student = users(:three)
      assignment_test = assignments(:one)
      assert_equal 100, test_student.get_grade(assignment_test.id)
    end
