@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :teacher_logged_in?
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy, :edit_achievements, :update_achievements]
 
   # GET /students
   # GET /students.json
@@ -20,6 +20,17 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+  end
+
+  def edit_achievements
+    @achievements = Achievement.all
+  end
+
+  def update_achievements
+    params[:achievement].each do |k, v|
+      achievement = Achievement.find_by_id(k)
+      @student.achievements << achievement
+    end
   end
 
   # POST /students

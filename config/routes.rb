@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :achievements do
-    member do
-      :students
-    end
+
   end
   get 'dashboard/student'
 
@@ -16,7 +14,12 @@ Rails.application.routes.draw do
 
   resources :assignments
   resources :parents
-  resources :students
+  resources :students do
+    member do
+      get 'edit_achievements'
+      post 'update_achievements'
+    end
+  end
   resources :teachers
 
   get 'dashboard/index'

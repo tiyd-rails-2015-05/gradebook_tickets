@@ -1,0 +1,13 @@
+  <%= form_tag(update_achievements_student_path) do %>
+    <% @achievements.each do |a| %>
+
+    <div class="field">
+      <%= label_tag a.name %>
+      <%= check_box_tag "achievement[#{a.id}]" %>
+    </div>
+
+    <% end %>
+    
+    <%= submit_tag "Submit!" %>
+
+<% end %>
