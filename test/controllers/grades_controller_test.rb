@@ -1,14 +1,17 @@
 require 'test_helper'
 require 'grades_controller.rb'
 
-class GradesController < ApplicationController
-  def teacher_logged_in?
-    true
-  end
-end
+# class GradesController < ApplicationController
+#   def teacher_logged_in?
+#     true
+#   end
+# end
 
 class GradesControllerTest < ActionController::TestCase
+  # include Devise::TestHelpers
+
   setup do
+    sign_in users(:six)
     @grade = grades(:one)
   end
 

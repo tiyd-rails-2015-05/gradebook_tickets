@@ -1,15 +1,18 @@
 require 'test_helper'
 require 'teachers_controller.rb'
 
-class TeachersController < ApplicationController
-  def teacher_logged_in?
-    true
-  end
-end
+# class TeachersController < ApplicationController
+#   def teacher_logged_in?
+#     true
+#   end
+# end
 
 class TeachersControllerTest < ActionController::TestCase
+  # include Devise::TestHelpers
+
   setup do
-    @teacher = Teacher.create!(name: "teacher", email: "teacher_email", password: "password")
+    sign_in users(:six)
+    @teacher = users(:six)
   end
 
   test "should get index" do
@@ -25,7 +28,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should create teacher" do
     assert_difference('Teacher.count') do
-      post :create, teacher: { email: @teacher.email, name: @teacher.name, password: @teacher.password }
+      post :create, teacher: { email: "o@o.com", name: "o", password: "password" }
     end
 
     assert_redirected_to teacher_path(assigns(:teacher))
@@ -42,7 +45,7 @@ class TeachersControllerTest < ActionController::TestCase
   end
 
   test "should update teacher" do
-    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
+    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password: @teacher.password }
     assert_redirected_to teacher_path(assigns(:teacher))
   end
 

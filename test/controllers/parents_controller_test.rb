@@ -1,16 +1,17 @@
 require 'test_helper'
 require 'parents_controller.rb'
 
-class ParentsController < ApplicationController
-  def teacher_logged_in?
-    true
-  end
-end
+# class ParentsController < ApplicationController
+#   def teacher_logged_in?
+#     true
+#   end
+# end
 
 class ParentsControllerTest < ActionController::TestCase
 
   setup do
-    @parent = parents(:one)
+    sign_in users(:six)
+    @parent = users(:one)
   end
 
   test "should get index" do
@@ -26,7 +27,7 @@ class ParentsControllerTest < ActionController::TestCase
 
   test "should create parent" do
     assert_difference('Parent.count') do
-      post :create, parent: { email: @parent.email, name: @parent.name, password: "password", student_id: 1 }
+      post :create, parent: { email: "o@o.com", name: "o", password: "password", student_id: users(:three).id}
     end
 
     assert_redirected_to parent_path(assigns(:parent))
@@ -43,7 +44,7 @@ class ParentsControllerTest < ActionController::TestCase
   end
 
   test "should update parent" do
-    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, password_digest: @parent.password_digest, student_id: @parent.student_id }
+    patch :update, id: @parent, parent: { email: @parent.email, name: @parent.name, password: @parent.password, student_id: @parent.student_id }
     assert_redirected_to parent_path(assigns(:parent))
   end
 

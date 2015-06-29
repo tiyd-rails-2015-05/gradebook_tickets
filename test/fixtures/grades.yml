@@ -3,14 +3,14 @@
 one:
   assignment: :one
   score: 1
-  student: :one
+  student: :three
 
 two:
   assignment: :one
   score: 1
-  student: :one
+  student: :four
 
 three:
   assignment: :one
   score: 100
-  student: :three
+  student: :five
