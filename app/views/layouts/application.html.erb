@@ -9,11 +9,10 @@
   <% if current_user  %>
     <%= render '/layouts/header' %>
   <% end %>
-
-  <%= link_to "Logout", sessions_logout_path if session[:user_id] %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
+  <div style="text-align:center;">
+    <p class="notice" id="notice"><%= notice %></p>
+    <p class="alert" id="alert"><%= alert %></p>
+  </div>
   <div class="container">
     <div class="row">
       <%= yield %>

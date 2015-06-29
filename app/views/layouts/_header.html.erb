@@ -6,34 +6,54 @@
     <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul class="navigation-menu show" id="js-navigation-menu">
-        <li class="nav-link">
-          <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
-        </li>
-        <li class="nav-link">
-          <%= link_to "All Assignments", assignments_path, class: "navbar" %>
-        </li>
-        <li class="nav-link">
-          <%= link_to "View Parents", parents_path, class: "navbar" %>
-        </li>
-        <li class="nav-link">
-          <%= link_to "Generate API Key", new_api_key_path, class: "navbar" %>
-        </li>
 
-
-        <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Students</a>
+        <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Parents</a>
           <ul class="submenu">
             <li class="nav-link">
-              <%= link_to "View Students", students_path, class: "navbar" %>
+              <%= link_to "New Parent", new_parent_path, class: "navbar" %>
             </li>
             <li class="nav-link">
-              <%= link_to "New Student", new_student_path, class: "navbar" %>
+              <%= link_to "All Parents", parents_path, class: "navbar" %>
             </li>
           </ul>
         </li>
 
-        <li class="nav-link">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar" %>
+        <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Assignments</a>
+          <ul class="submenu">
+            <li class="nav-link">
+              <%= link_to "New Assignment", new_assignment_path, class: "navbar" %>
+            </li>
+            <li class="nav-link">
+              <%= link_to "All Assignments", assignments_path, class: "navbar" %>
+            </li>
+          </ul>
         </li>
+
+        <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Students</a>
+          <ul class="submenu">
+            <li class="nav-link">
+              <%= link_to "New Student", new_student_path, class: "navbar" %>
+            </li>
+            <li class="nav-link">
+              <%= link_to "View Students", students_path, class: "navbar" %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-link more">
+          <a class="navbar" href="javascript:void(0)">
+            <i class="fa fa-cogs"></i>
+          </a>
+          <ul class="submenu">
+            <li class="nav-link">
+              <%= link_to '<i class="fa fa-key"></i> API Keys'.html_safe, new_api_key_path, class: "navbar" %>
+            </li>
+            <li class="nav-link">
+              <%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: "navbar", flash: {:notice => "Logout Successful"} %>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </nav>
   </div>
