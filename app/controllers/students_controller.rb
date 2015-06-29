@@ -29,7 +29,8 @@ class StudentsController < ApplicationController
   def update_achievements
     params[:achievement].each do |k, v|
       achievement = Achievement.find_by_id(k)
-      @student.achievements << achievement 
+      @student.achievements << achievement
+      achievement.students << @student
     end
   end
 
