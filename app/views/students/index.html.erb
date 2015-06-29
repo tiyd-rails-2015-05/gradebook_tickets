@@ -18,6 +18,7 @@
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Add Parent', new_parent_path(student_id: student.id) %></td>
         <td><%= link_to 'Edit Achievements', edit_achievements_student_path(student) %></td>
+        <td><%= link_to 'All Achievements', show_achievements_student_path(student) %></td>  
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

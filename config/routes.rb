@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do
       get 'edit_achievements'
       post 'update_achievements'
+      get 'show_achievements'
     end
   end
   resources :teachers
