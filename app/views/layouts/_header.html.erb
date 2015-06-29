@@ -18,7 +18,7 @@
         <li class="nav-link">
           <%= link_to "Generate API Key", new_api_key_path, class: "navbar" %>
         </li>
-        
+
 
         <li class="nav-link more"><a class="navbar" href="javascript:void(0)">Students</a>
           <ul class="submenu">
@@ -32,7 +32,7 @@
         </li>
 
         <li class="nav-link">
-          <%= link_to "Logout", sessions_logout_path, class: "navbar" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar" %>
         </li>
 
         <!-- <ul id="flex-out">

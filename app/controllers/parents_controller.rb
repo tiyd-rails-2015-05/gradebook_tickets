@@ -1,11 +1,11 @@
 class ParentsController < ApplicationController
-  before_action :teacher_logged_in?
+  # before_action :teacher_logged_in?
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents
   # GET /parents.json
   def index
-    @students = Student.where(teacher_id: session[:user_id])
+    @students = Student.where(teacher_id: current_user.id)
   end
 
   # GET /parents/1

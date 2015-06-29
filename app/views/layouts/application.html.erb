@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html>
+<!-- <html>
   <head>
     <title>Gradebook</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-  </head>
+    <%# stylesheet_link_tag    'application', media: 'all' %>
+    <%# javascript_include_tag 'application' %>
+    <%# csrf_meta_tags %>
+  </head> -->
+
   <!-- <body class="fa-pulse"> <!-- If you want to really die -->
   <!-- <body class="fa-spin"> -->
-  
-  <body>
+
+  <!-- <body>
     <% if session[:user_id] %>
-      <%= render '/layouts/header' %>
+      <%# render '/layouts/header' %>
     <% end %>
-    <p id="notice" class="center"><%= notice %></p>
+    <p id="notice" class="center"><%# notice %></p>
     <div class="container">
       <div class="row">
-        <%= yield %>
-      </div>
+        <%# yield %>
+      </div> -->
+<!-- zach? -------------------------------------------------->
+<head>
+  <title>Gradebook</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if current_user  %>
+    <%= render '/layouts/header' %>
+  <% end %>
+
+  <%= link_to "Logout", sessions_logout_path if session[:user_id] %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.name %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+  <% end %>
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+<!-- zach?? --------------------------------->
     </div>
     <%= render '/layouts/footer' %>
   </body>

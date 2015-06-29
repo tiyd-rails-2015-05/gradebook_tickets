@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :teacher_logged_in?
+  # before_action :teacher_logged_in?
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
 
   # GET /assignments
@@ -15,12 +15,12 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/new
   def new
-    @assignment = Assignment.new(teacher_id: session[:user_id])
+    @assignment = Assignment.new(teacher_id: current_user.id)
   end
 
   # GET /assignments/1/edit
   def edit
-    @teacher = Teacher.find_by_id(session[:user_id])
+    @teacher = Teacher.find_by_id(current_user.id)
     @grades = Grade.where(assignment_id: @assignment.id)
   end
 

@@ -2,9 +2,10 @@ require 'test_helper'
 
 class ApiKeysControllerTest < ActionController::TestCase
   setup do
-    @teacher = teachers(:one)
-    session[:user_id] = @teacher.id
-    session[:user_type] = "teacher"
+    sign_in users(:six)
+    # @teacher = users(:six)
+    # current_user.id = @teacher.id
+    # current_user.type = "Teacher"
   end
 
   test "should get new" do
@@ -21,5 +22,5 @@ class ApiKeysControllerTest < ActionController::TestCase
     get :show
     assert_response :success
   end
-  
+
 end

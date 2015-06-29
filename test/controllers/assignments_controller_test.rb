@@ -1,16 +1,17 @@
 require 'test_helper'
 require 'assignments_controller'
 
-class AssignmentsController < ApplicationController
-  def teacher_logged_in?
-    true
-  end
-end
+# class AssignmentsController < ApplicationController
+#   def teacher_logged_in?
+#     true
+#   end
+# end
 
 class AssignmentsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:six)
     @assignment = assignments(:one)
-    @teacher = teachers(:one)
+    @teacher = users(:six)
   end
 
   test "should get index" do

@@ -48,8 +48,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Puma as the app server
 gem 'puma'
 
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'omniauth-github', :github => 'intridea/omniauth-github'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

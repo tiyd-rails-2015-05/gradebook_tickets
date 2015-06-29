@@ -1,6 +1,5 @@
-class Parent < ActiveRecord::Base
+class Parent < User
   belongs_to :student
-  has_secure_password
 
   def self.send_email
     parents = Parent.all
@@ -8,4 +7,5 @@ class Parent < ActiveRecord::Base
       ParentMailer.weekly_email(p.email).deliver_now
     end
   end
+
 end

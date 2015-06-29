@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'career' => 'pages#career'
   #------------------------
+
+  devise_for :users, :controllers => { omniauth_callbacks: "omniauth_callbacks" }
+
   resources :api_keys
   get 'api_keys/new'
   get 'api_keys/create'
@@ -17,9 +20,9 @@ Rails.application.routes.draw do
   get 'dashboard/teacher'
 
 
-  get 'sessions/login'
-  post 'sessions/login'
-  get 'sessions/logout'
+  # get 'sessions/login'
+  # post 'sessions/login'
+  # get 'sessions/logout'
 
   resources :assignments do
     member do

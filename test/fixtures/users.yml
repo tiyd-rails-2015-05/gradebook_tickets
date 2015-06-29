@@ -1,0 +1,52 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one:
+  name: "name"
+  email: "email"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Parent"
+  student: :three
+
+two:
+  name: "name2"
+  email: "email2"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Parent"
+  student: :four
+
+three:
+  name: "student1"
+  email: "studentemail"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Student"
+  teacher: :six
+
+four:
+  name: "student"
+  email: "studentemail2"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Student"
+  teacher: :six
+
+five:
+  name: "student3"
+  email: "studentemail3"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Student"
+  teacher: :six
+
+six:
+  name: "teacher"
+  email: "teacheremail"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Teacher"
+
+seven:
+  name: "teacher2"
+  email: "teacheremail2"
+  encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Teacher"

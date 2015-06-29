@@ -3,7 +3,7 @@ require 'test_helper'
 class StudentTest < ActiveSupport::TestCase
 
   test "has_grade?" do
-    bob = students(:one)
+    bob = users(:three)
     assignment = Assignment.create(name: "test", due: Date.today, teacher_id: 1)
     grade = Grade.create(student_id: bob.id, assignment_id: assignment.id)
 
@@ -15,7 +15,7 @@ class StudentTest < ActiveSupport::TestCase
   end
 
    test "get grade" do
-     test_student = students(:three)
+     test_student = users(:three)
      assignment_test = assignments(:one)
      assert_equal 100, test_student.get_grade(assignment_test.id)
    end
