@@ -1,4 +1,9 @@
   <%= form_tag(update_achievements_student_path) do %>
+
+  <% if @student.incomplete_achievements.empty? %>
+    <h1>Student has completed all assignments</h1>
+    <h4>Total achievements: <%= @student.total %></h4>
+  <% else %>
     <% @student.incomplete_achievements.each do |a| %>
 
     <div class="field">
@@ -9,5 +14,9 @@
     <% end %>
 
     <%= submit_tag "Submit!" %>
+
+    <h4>Total achievements so far: <%= @student.total %></h4>
+    
+    <% end %>
 
 <% end %>

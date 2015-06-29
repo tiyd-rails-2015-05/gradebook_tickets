@@ -16,6 +16,9 @@ class Student < ActiveRecord::Base
     incomplete
   end
 
-
+  def total
+    all = achievements.map {|a| a.amount}
+    all.reduce(:+)
+  end
 
 end
