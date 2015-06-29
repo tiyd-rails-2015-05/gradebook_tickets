@@ -11,7 +11,7 @@ class Assignment < ActiveRecord::Base
     if num_students_with_grades > 0
       self.grades.sum(:score)/num_students_with_grades
     else
-      "No scores yet"
+      "No scores yet."
     end
 
   end

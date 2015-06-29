@@ -3,7 +3,7 @@ require 'test_helper'
 class StudentTest < ActiveSupport::TestCase
 
   test "has_grade?" do
-    bob = students(:three)
+    bob = users(:three)
     assignment = Assignment.create(name: "test", due: Date.today, teacher_id: 1)
     grade = Grade.create(student_id: bob.id, assignment_id: assignment.id)
 

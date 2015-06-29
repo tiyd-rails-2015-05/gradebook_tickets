@@ -1,15 +1,15 @@
 require 'test_helper'
 require 'dashboard_controller.rb'
 
-def teacher_logged_in?
-  true
-end
-def student_logged_in?
-  true
-end
-def parent_logged_in?
-  true
-end
+# def teacher_logged_in?
+#   true
+# end
+# def student_logged_in?
+#   true
+# end
+# def parent_logged_in?
+#   true
+# end
 
 # class DashboardControllerTest < ActionController::TestCase
 #   test "should get student" do

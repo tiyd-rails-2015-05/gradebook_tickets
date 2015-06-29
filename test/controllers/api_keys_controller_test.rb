@@ -2,9 +2,10 @@ require 'test_helper'
 
 class ApiKeysControllerTest < ActionController::TestCase
   setup do
-    @teacher = users(:six)
-    current_user.id = @teacher.id
-    current_user.type = "Teacher"
+    sign_in users(:six)
+    # @teacher = users(:six)
+    # current_user.id = @teacher.id
+    # current_user.type = "Teacher"
   end
 
   test "should get new" do

@@ -8,38 +8,45 @@ one:
   name: "name"
   email: "email"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  # student: :three
+  type: "Parent"
+  student: :three
 
 two:
   name: "name2"
   email: "email2"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  # student: :three
+  type: "Parent"
+  student: :four
 
 three:
   name: "student1"
   email: "studentemail"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  # teacher: :six
+  type: "Student"
+  teacher: :six
 
 four:
   name: "student"
   email: "studentemail2"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  # teacher: :six
+  type: "Student"
+  teacher: :six
 
 five:
   name: "student3"
   email: "studentemail3"
   encrypted_password: <%= BCrypt::Password.create("password") %>
-  # teacher: :six
+  type: "Student"
+  teacher: :six
 
 six:
   name: "teacher"
   email: "teacheremail"
   encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Teacher"
 
 seven:
   name: "teacher2"
   email: "teacheremail2"
   encrypted_password: <%= BCrypt::Password.create("password") %>
+  type: "Teacher"
