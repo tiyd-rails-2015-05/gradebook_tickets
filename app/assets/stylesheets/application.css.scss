@@ -83,14 +83,17 @@ body {
   // background-color: rgb(143, 159, 152);
 }
 
+
+
 .app-form {
-  @include border-style(solid);
-  @include padding(20px 20px 20px 20px);
-  @include position(relative, 0px 5em 10px 7em);
-  @include margin(100px 375px );
-  width: 25%;
-  background-color: rgb(62, 166, 121);
+  border-style: solid;
+  padding: 20px;
+  position: relative;
+  margin: 5% auto;
+  width: 315px;
+  background-color: #3ea679;
 }
+
 
 // Navigation Header-----------findnav-----------------------------------------
 header.navigation {
@@ -1170,4 +1173,9 @@ div.background {
       background-color: $card-background;
     }
   }
+}
+
+.white {
+  color: white;
+  text-shadow: 1px 1px black;
 }
