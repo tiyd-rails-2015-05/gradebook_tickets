@@ -10,7 +10,7 @@ gem 'daemons'
 gem 'paperclip', "~> 4.2"
 
 gem "aws-sdk", '~> 1.6'
-
+gem "d3-rails"
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

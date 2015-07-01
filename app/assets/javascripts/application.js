@@ -12,7 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require d3
 //= require_tree .
+
+var circle = d3.selectAll("circle");
+circle.style("fill", "steelblue");
+circle.attr("r", 30);
+circle.data([32, 57, 112]);
+
 $('#playsound').click(function (e) {
     $('#sound_effect')[0].currentTime = 0;
     $('#sound_effect')[0].play();
