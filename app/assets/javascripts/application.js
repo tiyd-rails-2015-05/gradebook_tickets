@@ -67,5 +67,6 @@ document.onkeydown = function() {
 }
 
 $(function hideNotice(){
-		$('#notice').fadeOut(1500);
+  $('#notice').fadeOut(2000);
+	$('#alert').fadeOut(2000);
 });

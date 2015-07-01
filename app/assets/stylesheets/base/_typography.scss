@@ -69,7 +69,7 @@ picture {
   color: white;
   text-shadow: 1px 1px black;
 }
-p#notice {
+p#notice, #alert {
   z-index: 100;
   position: absolute;
   margin-top: 10%;
