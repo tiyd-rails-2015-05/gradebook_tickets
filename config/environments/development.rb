@@ -23,8 +23,8 @@ Rails.application.configure do
     address:              'smtp.sendgrid.net',
     port:                 587,
     domain:               'donotreply.com',
-    user_name:            'danai-potatomaster',
-    password:             'Potatomaster1',
+    user_name:            'something',
+    password:             'something',
     authentication:       'plain',
     enable_starttls_auto: true
   }
